@@ -20,9 +20,9 @@
 /ALTERNATENAME:__imp___std_init_once_complete=__imp_InitOnceComplete
 /DELAYLOAD:"d3d12.dll"
 /DELAYLOAD:"DBGHELP.DLL"
-/LIBPATH:"C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/lib/x64"
-/LIBPATH:"C:/Program Files (x86)/Windows Kits/10/lib/10.0.26100.0/ucrt/x64"
-/LIBPATH:"C:/Program Files (x86)/Windows Kits/10/lib/10.0.26100.0/um/x64"
+/LIBPATH:"D:/VSProducts/VC/Tools/MSVC/14.38.33130/lib/x64"
+/LIBPATH:"C:/Program Files (x86)/Windows Kits/10/lib/10.0.22621.0/ucrt/x64"
+/LIBPATH:"C:/Program Files (x86)/Windows Kits/10/lib/10.0.22621.0/um/x64"
 /NODEFAULTLIB:"LIBCMT"
 /NODEFAULTLIB:"LIBCPMT"
 /NODEFAULTLIB:"LIBCMTD"
@@ -36,13 +36,15 @@
 /FUNCTIONPADMIN:6
 /NOIMPLIB
 /NOEXP
-"D:/GitClone/KingofSlacker/KingofSlacker/Intermediate/Build/Win64/x64/KingofSlackerEditor/Development/UnrealEd/SharedPCH.UnrealEd.Project.ValApi.ValExpApi.Cpp20.h.obj"
-"D:/GitClone/KingofSlacker/KingofSlacker/Intermediate/Build/Win64/x64/UnrealEditor/Development/KingofSlacker/KingofSlacker.cpp.obj"
-"D:/GitClone/KingofSlacker/KingofSlacker/Intermediate/Build/Win64/x64/UnrealEditor/Development/KingofSlacker/PerModuleInline.gen.cpp.obj"
-"D:/GitClone/KingofSlacker/KingofSlacker/Intermediate/Build/Win64/x64/UnrealEditor/Development/KingofSlacker/Default.rc2.res"
+"G:/GitHubClone/KingofSlacker/KingofSlacker/Intermediate/Build/Win64/x64/KingofSlackerEditor/Development/UnrealEd/SharedPCH.UnrealEd.Project.ValApi.ValExpApi.Cpp20.h.obj"
+"G:/GitHubClone/KingofSlacker/KingofSlacker/Intermediate/Build/Win64/x64/UnrealEditor/Development/KingofSlacker/Module.KingofSlacker.gen.cpp.obj"
+"G:/GitHubClone/KingofSlacker/KingofSlacker/Intermediate/Build/Win64/x64/UnrealEditor/Development/KingofSlacker/KingofSlacker.cpp.obj"
+"G:/GitHubClone/KingofSlacker/KingofSlacker/Intermediate/Build/Win64/x64/UnrealEditor/Development/KingofSlacker/KS_GameModeBase.cpp.obj"
+"G:/GitHubClone/KingofSlacker/KingofSlacker/Intermediate/Build/Win64/x64/UnrealEditor/Development/KingofSlacker/PerModuleInline.gen.cpp.obj"
+"G:/GitHubClone/KingofSlacker/KingofSlacker/Intermediate/Build/Win64/x64/UnrealEditor/Development/KingofSlacker/Default.rc2.res"
+"../Intermediate/Build/Win64/x64/UnrealEditor/Development/Engine/UnrealEditor-Engine.lib"
 "../Intermediate/Build/Win64/x64/UnrealEditor/Development/Core/UnrealEditor-Core.lib"
 "../Intermediate/Build/Win64/x64/UnrealEditor/Development/CoreUObject/UnrealEditor-CoreUObject.lib"
-"../Intermediate/Build/Win64/x64/UnrealEditor/Development/Engine/UnrealEditor-Engine.lib"
 "../Intermediate/Build/Win64/x64/UnrealEditor/Development/InputCore/UnrealEditor-InputCore.lib"
 "../Plugins/EnhancedInput/Intermediate/Build/Win64/x64/UnrealEditor/Development/EnhancedInput/UnrealEditor-EnhancedInput.lib"
 "delayimp.lib"
@@ -70,6 +72,6 @@
 "synchronization.lib"
 "dwmapi.lib"
 "imm32.lib"
-/OUT:"D:/GitClone/KingofSlacker/KingofSlacker/Binaries/Win64/UnrealEditor-KingofSlacker.dll"
-/PDB:"D:/GitClone/KingofSlacker/KingofSlacker/Binaries/Win64/UnrealEditor-KingofSlacker.pdb"
+/OUT:"G:/GitHubClone/KingofSlacker/KingofSlacker/Binaries/Win64/UnrealEditor-KingofSlacker.dll"
+/PDB:"G:/GitHubClone/KingofSlacker/KingofSlacker/Binaries/Win64/UnrealEditor-KingofSlacker.pdb"
 /ignore:4078

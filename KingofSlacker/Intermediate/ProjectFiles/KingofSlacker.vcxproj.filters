@@ -11,6 +11,7 @@
     <None Include="..\..\Source\KingofSlackerEditor.Target.cs">
       <Filter>Source</Filter>
     </None>
+    <None Include="..\..\.vsconfig" />
     <Filter Include="Config">
       <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
     </Filter>
@@ -37,6 +38,24 @@
     </ClCompile>
     <ClInclude Include="..\..\Source\KingofSlacker\KingofSlacker.h">
       <Filter>Source\KingofSlacker</Filter>
+    </ClInclude>
+    <Filter Include="Source\KingofSlacker\Private">
+      <UniqueIdentifier>{A5F9946C-E9C7-3D12-94EC-0F5E16422EDB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\KingofSlacker\Private\Gameplay">
+      <UniqueIdentifier>{911C2CC4-9468-39A9-9247-D366AA4E8168}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\KingofSlacker\Private\Gameplay\KS_GameModeBase.cpp">
+      <Filter>Source\KingofSlacker\Private\Gameplay</Filter>
+    </ClCompile>
+    <Filter Include="Source\KingofSlacker\Public">
+      <UniqueIdentifier>{DBA1115A-1EB9-3839-A3A8-24289C2B6F34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\KingofSlacker\Public\Gameplay">
+      <UniqueIdentifier>{56719F8C-04A2-302B-8966-2599C1FFD939}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\KingofSlacker\Public\Gameplay\KS_GameModeBase.h">
+      <Filter>Source\KingofSlacker\Public\Gameplay</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
