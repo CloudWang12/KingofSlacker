@@ -1615,3 +1615,5 @@ LogConfig: Set CVar [[r.VRS.ContrastAdaptiveShading:1]]
 [2025.11.20-10.40.08:512][313]LogShaderCompilers: Display: Job TMaterialCHSFNoLightMapPolicyFAnyHitShader(permutation 0, format PCD3D_SM6) compile time exceeded threshold (71.467s)
 [2025.11.20-10.40.08:817][348]LogShaderCompilers: Display: Job TMaterialCHSFNoLightMapPolicyFAnyHitShader(permutation 0, format PCD3D_SM6) compile time exceeded threshold (72.979s)
 [2025.11.20-10.40.10:046][479]LogShaderCompilers: Display: Job FPathTracingMaterialCHS(permutation 0, format PCD3D_SM6) compile time exceeded threshold (73.078s)
+[2025.11.20-10.40.16:508][242]LogShaderCompilers: Display: Job TMaterialCHSFNoLightMapPolicyFAnyHitShader(permutation 0, format PCD3D_SM6) compile time exceeded threshold (74.437s)
+[2025.11.20-10.40.18:128][382]LogPSOHitching: Encountered 150 PSO creation hitches so far (48 graphics, 102 compute). 0 of them were precached.
