@@ -1580,3 +1580,38 @@ LogConfig: Set CVar [[r.VRS.ContrastAdaptiveShading:1]]
 [2025.11.20-10.39.46:559][856]LogMeshUtilities: Finished distance field build in 2.8s - 126x126x126 sparse distance field, 2.6Mb total, 0.1Mb always loaded, 75% occupied, 0 triangles, StaticMesh_HLOD0_Instancing_3
 [2025.11.20-10.39.47:870][  2]LogMeshUtilities: Finished distance field build in 1.5s - 126x126x126 sparse distance field, 1.6Mb total, 0.1Mb always loaded, 45% occupied, 0 triangles, StaticMesh_HLOD0_Instancing_3
 [2025.11.20-10.39.50:511][305]LogMeshUtilities: Finished distance field build in 4.1s - 126x126x126 sparse distance field, 3.1Mb total, 0.1Mb always loaded, 94% occupied, 0 triangles, StaticMesh_HLOD0_Instancing_3
+[2025.11.20-10.39.53:204][611]LogMeshUtilities: Finished distance field build in 4.9s - 126x126x126 sparse distance field, 1.4Mb total, 0.1Mb always loaded, 39% occupied, 0 triangles, StaticMesh_HLOD0_Instancing_3
+[2025.11.20-10.39.53:393][631]LogMeshUtilities: Finished distance field build in 5.1s - 126x126x126 sparse distance field, 1.5Mb total, 0.1Mb always loaded, 40% occupied, 0 triangles, StaticMesh_HLOD0_Instancing_3
+[2025.11.20-10.39.53:426][634]LogMeshUtilities: Finished distance field build in 5.2s - 126x126x126 sparse distance field, 1.6Mb total, 0.1Mb always loaded, 42% occupied, 0 triangles, StaticMesh_HLOD0_Instancing_3
+[2025.11.20-10.39.53:588][651]LogMeshUtilities: Finished distance field build in 5.3s - 126x126x126 sparse distance field, 1.6Mb total, 0.1Mb always loaded, 44% occupied, 0 triangles, StaticMesh_HLOD0_Instancing_3
+[2025.11.20-10.39.53:694][663]LogMeshUtilities: Finished distance field build in 5.4s - 126x126x126 sparse distance field, 1.7Mb total, 0.1Mb always loaded, 46% occupied, 0 triangles, StaticMesh_HLOD0_Instancing_3
+[2025.11.20-10.39.53:759][671]LogMeshUtilities: Finished distance field build in 5.5s - 126x126x126 sparse distance field, 1.8Mb total, 0.1Mb always loaded, 48% occupied, 0 triangles, StaticMesh_HLOD0_Instancing_3
+[2025.11.20-10.39.53:804][676]LogMeshUtilities: Finished distance field build in 5.5s - 126x126x126 sparse distance field, 1.9Mb total, 0.1Mb always loaded, 52% occupied, 0 triangles, StaticMesh_HLOD0_Instancing_3
+[2025.11.20-10.39.54:893][796]LogMeshUtilities: Finished distance field build in 6.6s - 126x126x126 sparse distance field, 3.3Mb total, 0.1Mb always loaded, 100% occupied, 0 triangles, StaticMesh_HLOD0_Instancing_3
+[2025.11.20-10.39.55:558][870]LogMeshUtilities: Finished distance field build in 1.4s - 126x126x126 sparse distance field, 1.4Mb total, 0.1Mb always loaded, 38% occupied, 0 triangles, StaticMesh_HLOD0_Instancing_3
+[2025.11.20-10.39.55:799][896]LogDerivedDataCache: C:/Users/COMP User/AppData/Local/UnrealEngine/Common/DerivedDataCache: Maintenance finished in +00:00:00.001 and deleted 0 files with total size 0 MiB and 0 empty folders. Scanned 0 files in 1 folders with total size 0 MiB.
+[2025.11.20-10.39.57:662][115]LogMeshUtilities: Finished distance field build in 3.5s - 126x126x126 sparse distance field, 3.3Mb total, 0.1Mb always loaded, 100% occupied, 0 triangles, StaticMesh_HLOD0_Instancing_3
+[2025.11.20-10.39.59:793][365]LogMeshUtilities: Finished distance field build in 3.8s - 126x126x126 sparse distance field, 1.5Mb total, 0.1Mb always loaded, 40% occupied, 0 triangles, StaticMesh_HLOD0_Instancing_3
+[2025.11.20-10.39.59:841][369]LogMeshUtilities: Finished distance field build in 3.9s - 126x126x126 sparse distance field, 1.5Mb total, 0.1Mb always loaded, 40% occupied, 0 triangles, StaticMesh_HLOD0_Instancing_3
+[2025.11.20-10.39.59:857][371]LogMeshUtilities: Finished distance field build in 3.9s - 126x126x126 sparse distance field, 1.5Mb total, 0.1Mb always loaded, 42% occupied, 0 triangles, StaticMesh_HLOD0_Instancing_3
+[2025.11.20-10.40.00:299][421]LogMeshUtilities: Finished distance field build in 4.3s - 126x126x126 sparse distance field, 1.9Mb total, 0.1Mb always loaded, 52% occupied, 0 triangles, StaticMesh_HLOD0_Instancing_3
+[2025.11.20-10.40.00:497][443]LogMeshUtilities: Finished distance field build in 4.5s - 126x126x126 sparse distance field, 2.2Mb total, 0.1Mb always loaded, 62% occupied, 0 triangles, StaticMesh_HLOD0_Instancing_3
+[2025.11.20-10.40.00:935][490]LogMeshUtilities: Finished distance field build in 5.0s - 126x126x126 sparse distance field, 2.6Mb total, 0.1Mb always loaded, 75% occupied, 0 triangles, StaticMesh_HLOD0_Instancing_3
+[2025.11.20-10.40.02:000][612]LogMeshUtilities: Finished distance field build in 1.4s - 126x126x126 sparse distance field, 1.7Mb total, 0.1Mb always loaded, 46% occupied, 0 triangles, StaticMesh_HLOD0_Instancing_3
+[2025.11.20-10.40.04:570][920]LogMeshUtilities: Finished mesh card build in 2.5s StaticMesh_HLOD0_Instancing_3 tris:0 surfels:8583
+[2025.11.20-10.40.04:687][933]LogMeshUtilities: Finished distance field build in 4.1s - 126x126x126 sparse distance field, 2.0Mb total, 0.1Mb always loaded, 55% occupied, 0 triangles, StaticMesh_HLOD0_Instancing_3
+[2025.11.20-10.40.04:840][951]LogShaderCompilers: Display: Job TBasePassVSFNoLightMapPolicy(permutation 0, format PCD3D_SM6) compile time exceeded threshold (33.360s)
+[2025.11.20-10.40.05:046][965]LogShaderCompilers: Display: Job TBasePassPSFNoLightMapPolicy(permutation 0, format PCD3D_SM6) compile time exceeded threshold (70.782s)
+[2025.11.20-10.40.05:354][991]LogShaderCompilers: Display: Job FRayTracingDynamicGeometryConverterCS(permutation 0, format PCD3D_SM6) compile time exceeded threshold (50.572s)
+[2025.11.20-10.40.05:399][993]LogMeshUtilities: Finished distance field build in 3.3s - 126x126x126 sparse distance field, 1.8Mb total, 0.1Mb always loaded, 51% occupied, 0 triangles, StaticMesh_HLOD0_Instancing_3
+[2025.11.20-10.40.05:531][  5]LogMeshUtilities: Finished distance field build in 3.5s - 126x126x126 sparse distance field, 2.0Mb total, 0.1Mb always loaded, 55% occupied, 0 triangles, StaticMesh_HLOD0_Instancing_3
+[2025.11.20-10.40.05:661][ 20]LogShaderCompilers: Display: Job TBasePassVSFNoLightMapPolicy(permutation 0, format PCD3D_SM6) compile time exceeded threshold (65.408s)
+[2025.11.20-10.40.05:908][ 43]LogMeshUtilities: Finished distance field build in 3.8s - 126x126x126 sparse distance field, 2.3Mb total, 0.1Mb always loaded, 64% occupied, 0 triangles, StaticMesh_HLOD0_Instancing_3
+[2025.11.20-10.40.06:070][ 62]LogShaderCompilers: Display: Job TBasePassPSFNoLightMapPolicy(permutation 1, format PCD3D_SM6) compile time exceeded threshold (49.374s)
+[2025.11.20-10.40.06:504][106]LogMeshUtilities: Finished distance field build in 4.4s - 126x126x126 sparse distance field, 2.0Mb total, 0.1Mb always loaded, 55% occupied, 0 triangles, StaticMesh_HLOD0_Instancing_3
+[2025.11.20-10.40.06:581][115]LogShaderCompilers: Display: Job TBasePassPSFNoLightMapPolicy(permutation 1, format PCD3D_SM6) compile time exceeded threshold (69.729s)
+[2025.11.20-10.40.07:091][169]LogShaderCompilers: Display: Job TBasePassPSFNoLightMapPolicy(permutation 0, format PCD3D_SM6) compile time exceeded threshold (38.159s)
+[2025.11.20-10.40.07:801][241]LogShaderCompilers: Display: Job TBasePassPSFNoLightMapPolicy(permutation 0, format PCD3D_SM6) compile time exceeded threshold (41.003s)
+[2025.11.20-10.40.08:512][313]LogShaderCompilers: Display: Job TMaterialCHSFNoLightMapPolicyFAnyHitShader(permutation 0, format PCD3D_SM6) compile time exceeded threshold (71.467s)
+[2025.11.20-10.40.08:817][348]LogShaderCompilers: Display: Job TMaterialCHSFNoLightMapPolicyFAnyHitShader(permutation 0, format PCD3D_SM6) compile time exceeded threshold (72.979s)
+[2025.11.20-10.40.10:046][479]LogShaderCompilers: Display: Job FPathTracingMaterialCHS(permutation 0, format PCD3D_SM6) compile time exceeded threshold (73.078s)
