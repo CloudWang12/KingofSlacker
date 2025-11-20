@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "KingofSlacker",
+			"Path": "..\\Source\\KingofSlacker.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "KingofSlackerEditor",
+			"Path": "..\\Source\\KingofSlackerEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}
