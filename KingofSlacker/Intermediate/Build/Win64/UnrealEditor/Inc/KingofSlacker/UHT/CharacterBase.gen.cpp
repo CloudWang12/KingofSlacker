@@ -12,12 +12,12 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeCharacterBase() {}
 
 // ********** Begin Cross Module References ********************************************************
-ENGINE_API UClass* Z_Construct_UClass_ACharacter();
 ENGINE_API UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_USpringArmComponent_NoRegister();
 ENHANCEDINPUT_API UClass* Z_Construct_UClass_UInputAction_NoRegister();
 KINGOFSLACKER_API UClass* Z_Construct_UClass_ACharacterBase();
 KINGOFSLACKER_API UClass* Z_Construct_UClass_ACharacterBase_NoRegister();
+KINGOFSLACKER_API UClass* Z_Construct_UClass_ACharacterTemplate();
 UPackage* Z_Construct_UPackage__Script_KingofSlacker();
 // ********** End Cross Module References **********************************************************
 
@@ -291,7 +291,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ACharacte
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterBase_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_ACharacterBase_Statics::DependentSingletons[])() = {
-	(UObject* (*)())Z_Construct_UClass_ACharacter,
+	(UObject* (*)())Z_Construct_UClass_ACharacterTemplate,
 	(UObject* (*)())Z_Construct_UPackage__Script_KingofSlacker,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterBase_Statics::DependentSingletons) < 16);
@@ -326,10 +326,10 @@ ACharacterBase::~ACharacterBase() {}
 struct Z_CompiledInDeferFile_FID_KingofSlacker_Source_KingofSlacker_Public_Character_CharacterBase_h__Script_KingofSlacker_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ACharacterBase, ACharacterBase::StaticClass, TEXT("ACharacterBase"), &Z_Registration_Info_UClass_ACharacterBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ACharacterBase), 1491354694U) },
+		{ Z_Construct_UClass_ACharacterBase, ACharacterBase::StaticClass, TEXT("ACharacterBase"), &Z_Registration_Info_UClass_ACharacterBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ACharacterBase), 2247834447U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_KingofSlacker_Source_KingofSlacker_Public_Character_CharacterBase_h__Script_KingofSlacker_1917149148(TEXT("/Script/KingofSlacker"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_KingofSlacker_Source_KingofSlacker_Public_Character_CharacterBase_h__Script_KingofSlacker_3762836828(TEXT("/Script/KingofSlacker"),
 	Z_CompiledInDeferFile_FID_KingofSlacker_Source_KingofSlacker_Public_Character_CharacterBase_h__Script_KingofSlacker_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_KingofSlacker_Source_KingofSlacker_Public_Character_CharacterBase_h__Script_KingofSlacker_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

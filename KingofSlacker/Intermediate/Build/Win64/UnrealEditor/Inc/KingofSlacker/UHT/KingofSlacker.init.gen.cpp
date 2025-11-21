@@ -17,13 +17,13 @@ void EmptyLinkFunctionForGeneratedCodeKingofSlacker_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
-				0xCB0B5246,
-				0xF762DDA8,
+				0x5F4C6277,
+				0xCF425CEE,
 				METADATA_PARAMS(0, nullptr)
 			};
 			UECodeGen_Private::ConstructUPackage(Z_Registration_Info_UPackage__Script_KingofSlacker.OuterSingleton, PackageParams);
 		}
 		return Z_Registration_Info_UPackage__Script_KingofSlacker.OuterSingleton;
 	}
-	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_KingofSlacker(Z_Construct_UPackage__Script_KingofSlacker, TEXT("/Script/KingofSlacker"), Z_Registration_Info_UPackage__Script_KingofSlacker, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0xCB0B5246, 0xF762DDA8));
+	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_KingofSlacker(Z_Construct_UPackage__Script_KingofSlacker, TEXT("/Script/KingofSlacker"), Z_Registration_Info_UPackage__Script_KingofSlacker, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x5F4C6277, 0xCF425CEE));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

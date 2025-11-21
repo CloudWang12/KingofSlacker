@@ -3,6 +3,16 @@
 
 #include "Gameplay/KS_PlayerController.h"
 #include "EnhancedInputSubsystems.h"
+#include "Dialogue/DialogueComponent.h"
+#include "Inventory/InventoryComponent.h"
+
+AKS_PlayerController::AKS_PlayerController()
+{
+	InventoryComponent = CreateDefaultSubobject<UInventoryComponent>("InventoryComponent");
+
+	DialogueComponent = CreateDefaultSubobject<UDialogueComponent>("DialogueComponent");
+
+}
 
 void AKS_PlayerController::SetupInputComponent()
 {

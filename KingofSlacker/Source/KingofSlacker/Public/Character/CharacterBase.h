@@ -2,8 +2,10 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "CharacterTemplate.h"
 #include "GameFramework/Character.h"
 #include "CharacterBase.generated.h"
+
 
 class USpringArmComponent;
 class UCameraComponent;
@@ -12,7 +14,7 @@ struct FInputActionValue;
 
 
 UCLASS(Abstract)
-class KINGOFSLACKER_API ACharacterBase : public ACharacter
+class KINGOFSLACKER_API ACharacterBase : public ACharacterTemplate
 {
 	GENERATED_BODY()
 	
@@ -45,6 +47,8 @@ class KINGOFSLACKER_API ACharacterBase : public ACharacter
 	
 	UPROPERTY(EditAnywhere, Category="Input")
 	UInputAction* MouseLookAction;
+
+
 
 public:
 	
