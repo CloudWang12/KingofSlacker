@@ -42,19 +42,37 @@
     <Filter Include="Source\KingofSlacker\Private">
       <UniqueIdentifier>{A5F9946C-E9C7-3D12-94EC-0F5E16422EDB}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\KingofSlacker\Private\Character">
+      <UniqueIdentifier>{0E645502-0F08-3CAE-9E9B-A288CC13FB9A}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\KingofSlacker\Private\Character\CharacterBase.cpp">
+      <Filter>Source\KingofSlacker\Private\Character</Filter>
+    </ClCompile>
     <Filter Include="Source\KingofSlacker\Private\Gameplay">
       <UniqueIdentifier>{911C2CC4-9468-39A9-9247-D366AA4E8168}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\KingofSlacker\Private\Gameplay\KS_GameModeBase.cpp">
       <Filter>Source\KingofSlacker\Private\Gameplay</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\KingofSlacker\Private\Gameplay\KS_PlayerController.cpp">
+      <Filter>Source\KingofSlacker\Private\Gameplay</Filter>
+    </ClCompile>
     <Filter Include="Source\KingofSlacker\Public">
       <UniqueIdentifier>{DBA1115A-1EB9-3839-A3A8-24289C2B6F34}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\KingofSlacker\Public\Character">
+      <UniqueIdentifier>{974682F4-C5C5-3879-A706-61FBDB1004C2}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\KingofSlacker\Public\Character\CharacterBase.h">
+      <Filter>Source\KingofSlacker\Public\Character</Filter>
+    </ClInclude>
     <Filter Include="Source\KingofSlacker\Public\Gameplay">
       <UniqueIdentifier>{56719F8C-04A2-302B-8966-2599C1FFD939}</UniqueIdentifier>
     </Filter>
     <ClInclude Include="..\..\Source\KingofSlacker\Public\Gameplay\KS_GameModeBase.h">
+      <Filter>Source\KingofSlacker\Public\Gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\KingofSlacker\Public\Gameplay\KS_PlayerController.h">
       <Filter>Source\KingofSlacker\Public\Gameplay</Filter>
     </ClInclude>
   </ItemGroup>

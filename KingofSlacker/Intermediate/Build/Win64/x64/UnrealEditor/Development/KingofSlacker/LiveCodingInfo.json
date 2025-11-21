@@ -2,8 +2,10 @@
 	"RemapUnityFiles": 
 	{
 		"Module.KingofSlacker.gen.cpp.obj": [
+			"CharacterBase.gen.cpp.obj",
 			"KingofSlacker.init.gen.cpp.obj",
-			"KS_GameModeBase.gen.cpp.obj"
+			"KS_GameModeBase.gen.cpp.obj",
+			"KS_PlayerController.gen.cpp.obj"
 		]
 	}
 }

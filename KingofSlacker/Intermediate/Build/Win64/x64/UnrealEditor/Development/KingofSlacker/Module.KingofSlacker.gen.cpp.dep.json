@@ -6,6 +6,18 @@
         "PCH": "g:\\githubclone\\kingofslacker\\kingofslacker\\intermediate\\build\\win64\\x64\\kingofslackereditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.h.pch",
         "Includes": [
             "g:\\githubclone\\kingofslacker\\kingofslacker\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\kingofslacker\\definitions.kingofslacker.h",
+            "g:\\githubclone\\kingofslacker\\kingofslacker\\intermediate\\build\\win64\\unrealeditor\\inc\\kingofslacker\\uht\\characterbase.gen.cpp",
+            "g:\\githubclone\\kingofslacker\\kingofslacker\\source\\kingofslacker\\public\\character\\characterbase.h",
+            "d:\\ue_5.6\\engine\\source\\runtime\\engine\\classes\\gameframework\\character.h",
+            "d:\\ue_5.6\\engine\\source\\runtime\\engine\\classes\\gameframework\\charactermovementreplication.h",
+            "d:\\ue_5.6\\engine\\source\\runtime\\net\\core\\public\\net\\core\\nettoken\\nettokenexportcontext.h",
+            "d:\\ue_5.6\\engine\\source\\runtime\\experimental\\iris\\core\\public\\iris\\serialization\\irisobjectreferencepackagemap.h",
+            "d:\\ue_5.6\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\iriscore\\uht\\irisobjectreferencepackagemap.generated.h",
+            "d:\\ue_5.6\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\charactermovementreplication.generated.h",
+            "d:\\ue_5.6\\engine\\source\\runtime\\engine\\classes\\gameframework\\rootmotionsource.h",
+            "d:\\ue_5.6\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\rootmotionsource.generated.h",
+            "d:\\ue_5.6\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\character.generated.h",
+            "g:\\githubclone\\kingofslacker\\kingofslacker\\intermediate\\build\\win64\\unrealeditor\\inc\\kingofslacker\\uht\\characterbase.generated.h",
             "g:\\githubclone\\kingofslacker\\kingofslacker\\intermediate\\build\\win64\\unrealeditor\\inc\\kingofslacker\\uht\\kingofslacker.init.gen.cpp",
             "g:\\githubclone\\kingofslacker\\kingofslacker\\intermediate\\build\\win64\\unrealeditor\\inc\\kingofslacker\\uht\\ks_gamemodebase.gen.cpp",
             "g:\\githubclone\\kingofslacker\\kingofslacker\\source\\kingofslacker\\public\\gameplay\\ks_gamemodebase.h",
@@ -13,7 +25,10 @@
             "d:\\ue_5.6\\engine\\source\\runtime\\engine\\classes\\engine\\serverstatreplicator.h",
             "d:\\ue_5.6\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\serverstatreplicator.generated.h",
             "d:\\ue_5.6\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\gamemodebase.generated.h",
-            "g:\\githubclone\\kingofslacker\\kingofslacker\\intermediate\\build\\win64\\unrealeditor\\inc\\kingofslacker\\uht\\ks_gamemodebase.generated.h"
+            "g:\\githubclone\\kingofslacker\\kingofslacker\\intermediate\\build\\win64\\unrealeditor\\inc\\kingofslacker\\uht\\ks_gamemodebase.generated.h",
+            "g:\\githubclone\\kingofslacker\\kingofslacker\\intermediate\\build\\win64\\unrealeditor\\inc\\kingofslacker\\uht\\ks_playercontroller.gen.cpp",
+            "g:\\githubclone\\kingofslacker\\kingofslacker\\source\\kingofslacker\\public\\gameplay\\ks_playercontroller.h",
+            "g:\\githubclone\\kingofslacker\\kingofslacker\\intermediate\\build\\win64\\unrealeditor\\inc\\kingofslacker\\uht\\ks_playercontroller.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []
