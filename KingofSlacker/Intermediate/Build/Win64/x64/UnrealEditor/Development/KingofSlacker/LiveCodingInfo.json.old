@@ -1,0 +1,19 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.KingofSlacker.gen.cpp.obj": [
+			"AttributeComponent.gen.cpp.obj",
+			"CharacterBase.gen.cpp.obj",
+			"CharacterNPC.gen.cpp.obj",
+			"CharacterTemplate.gen.cpp.obj",
+			"DialogueComponent.gen.cpp.obj",
+			"DialogueDefinition.gen.cpp.obj",
+			"InventoryComponent.gen.cpp.obj",
+			"ItemActor.gen.cpp.obj",
+			"ItemType.gen.cpp.obj",
+			"KingofSlacker.init.gen.cpp.obj",
+			"KS_GameModeBase.gen.cpp.obj",
+			"KS_PlayerController.gen.cpp.obj"
+		]
+	}
+}

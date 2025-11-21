@@ -17,7 +17,7 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 // ********** Begin Class ACharacterBase ***********************************************************
-#define FID_KingofSlacker_Source_KingofSlacker_Public_Character_CharacterBase_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_KingofSlacker_Source_KingofSlacker_Public_Character_CharacterBase_h_19_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execDoJumpEnd); \
 	DECLARE_FUNCTION(execDoJumpStart); \
 	DECLARE_FUNCTION(execDoLook); \
@@ -26,18 +26,18 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 KINGOFSLACKER_API UClass* Z_Construct_UClass_ACharacterBase_NoRegister();
 
-#define FID_KingofSlacker_Source_KingofSlacker_Public_Character_CharacterBase_h_17_INCLASS_NO_PURE_DECLS \
+#define FID_KingofSlacker_Source_KingofSlacker_Public_Character_CharacterBase_h_19_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesACharacterBase(); \
 	friend struct Z_Construct_UClass_ACharacterBase_Statics; \
 	static UClass* GetPrivateStaticClass(); \
 	friend KINGOFSLACKER_API UClass* Z_Construct_UClass_ACharacterBase_NoRegister(); \
 public: \
-	DECLARE_CLASS2(ACharacterBase, ACharacter, COMPILED_IN_FLAGS(CLASS_Abstract | CLASS_Config), CASTCLASS_None, TEXT("/Script/KingofSlacker"), Z_Construct_UClass_ACharacterBase_NoRegister) \
+	DECLARE_CLASS2(ACharacterBase, ACharacterTemplate, COMPILED_IN_FLAGS(CLASS_Abstract | CLASS_Config), CASTCLASS_None, TEXT("/Script/KingofSlacker"), Z_Construct_UClass_ACharacterBase_NoRegister) \
 	DECLARE_SERIALIZER(ACharacterBase)
 
 
-#define FID_KingofSlacker_Source_KingofSlacker_Public_Character_CharacterBase_h_17_ENHANCED_CONSTRUCTORS \
+#define FID_KingofSlacker_Source_KingofSlacker_Public_Character_CharacterBase_h_19_ENHANCED_CONSTRUCTORS \
 	/** Deleted move- and copy-constructors, should never be used */ \
 	ACharacterBase(ACharacterBase&&) = delete; \
 	ACharacterBase(const ACharacterBase&) = delete; \
@@ -47,13 +47,13 @@ public: \
 	NO_API virtual ~ACharacterBase();
 
 
-#define FID_KingofSlacker_Source_KingofSlacker_Public_Character_CharacterBase_h_14_PROLOG
-#define FID_KingofSlacker_Source_KingofSlacker_Public_Character_CharacterBase_h_17_GENERATED_BODY \
+#define FID_KingofSlacker_Source_KingofSlacker_Public_Character_CharacterBase_h_16_PROLOG
+#define FID_KingofSlacker_Source_KingofSlacker_Public_Character_CharacterBase_h_19_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_KingofSlacker_Source_KingofSlacker_Public_Character_CharacterBase_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_KingofSlacker_Source_KingofSlacker_Public_Character_CharacterBase_h_17_INCLASS_NO_PURE_DECLS \
-	FID_KingofSlacker_Source_KingofSlacker_Public_Character_CharacterBase_h_17_ENHANCED_CONSTRUCTORS \
+	FID_KingofSlacker_Source_KingofSlacker_Public_Character_CharacterBase_h_19_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_KingofSlacker_Source_KingofSlacker_Public_Character_CharacterBase_h_19_INCLASS_NO_PURE_DECLS \
+	FID_KingofSlacker_Source_KingofSlacker_Public_Character_CharacterBase_h_19_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

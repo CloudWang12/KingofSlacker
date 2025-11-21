@@ -1,0 +1,15 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "g:\\githubclone\\kingofslacker\\kingofslacker\\source\\kingofslacker\\private\\inventory\\itemtype.cpp",
+        "ProvidedModule": "",
+        "PCH": "g:\\githubclone\\kingofslacker\\kingofslacker\\intermediate\\build\\win64\\x64\\kingofslackereditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.h.pch",
+        "Includes": [
+            "g:\\githubclone\\kingofslacker\\kingofslacker\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\kingofslacker\\definitions.kingofslacker.h",
+            "g:\\githubclone\\kingofslacker\\kingofslacker\\source\\kingofslacker\\public\\inventory\\itemtype.h",
+            "g:\\githubclone\\kingofslacker\\kingofslacker\\intermediate\\build\\win64\\unrealeditor\\inc\\kingofslacker\\uht\\itemtype.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
