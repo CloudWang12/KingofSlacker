@@ -10,5 +10,7 @@
 #include "G:/GitHubClone/KingofSlacker/KingofSlacker/Intermediate/Build/Win64/UnrealEditor/Inc/KingofSlacker/UHT/ItemActor.gen.cpp"
 #include "G:/GitHubClone/KingofSlacker/KingofSlacker/Intermediate/Build/Win64/UnrealEditor/Inc/KingofSlacker/UHT/ItemType.gen.cpp"
 #include "G:/GitHubClone/KingofSlacker/KingofSlacker/Intermediate/Build/Win64/UnrealEditor/Inc/KingofSlacker/UHT/KingofSlacker.init.gen.cpp"
+#include "G:/GitHubClone/KingofSlacker/KingofSlacker/Intermediate/Build/Win64/UnrealEditor/Inc/KingofSlacker/UHT/KS_BlueprintLibrary.gen.cpp"
 #include "G:/GitHubClone/KingofSlacker/KingofSlacker/Intermediate/Build/Win64/UnrealEditor/Inc/KingofSlacker/UHT/KS_GameModeBase.gen.cpp"
 #include "G:/GitHubClone/KingofSlacker/KingofSlacker/Intermediate/Build/Win64/UnrealEditor/Inc/KingofSlacker/UHT/KS_PlayerController.gen.cpp"
+#include "G:/GitHubClone/KingofSlacker/KingofSlacker/Intermediate/Build/Win64/UnrealEditor/Inc/KingofSlacker/UHT/KS_PlayerState.gen.cpp"

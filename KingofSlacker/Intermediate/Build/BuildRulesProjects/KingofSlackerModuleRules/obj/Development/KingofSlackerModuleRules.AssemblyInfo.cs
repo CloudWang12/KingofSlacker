@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KingofSlackerModuleRules")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Development")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+182eb011a31e41d8efe21d6dc41f2966be430cc8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+26c245a074a43a058f01979a017ab64abd43764a")]
 [assembly: System.Reflection.AssemblyProductAttribute("KingofSlackerModuleRules")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KingofSlackerModuleRules")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

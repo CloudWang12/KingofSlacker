@@ -16,14 +16,62 @@ ENGINE_API UClass* Z_Construct_UClass_APlayerController();
 ENHANCEDINPUT_API UClass* Z_Construct_UClass_UInputMappingContext_NoRegister();
 KINGOFSLACKER_API UClass* Z_Construct_UClass_AKS_PlayerController();
 KINGOFSLACKER_API UClass* Z_Construct_UClass_AKS_PlayerController_NoRegister();
+KINGOFSLACKER_API UClass* Z_Construct_UClass_AKS_PlayerState_NoRegister();
 KINGOFSLACKER_API UClass* Z_Construct_UClass_UDialogueComponent_NoRegister();
 KINGOFSLACKER_API UClass* Z_Construct_UClass_UInventoryComponent_NoRegister();
 UPackage* Z_Construct_UPackage__Script_KingofSlacker();
 // ********** End Cross Module References **********************************************************
 
+// ********** Begin Class AKS_PlayerController Function GetKSPlayerState ***************************
+struct Z_Construct_UFunction_AKS_PlayerController_GetKSPlayerState_Statics
+{
+	struct KS_PlayerController_eventGetKSPlayerState_Parms
+	{
+		AKS_PlayerState* ReturnValue;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "AKS | Getter" },
+		{ "ModuleRelativePath", "Public/Gameplay/KS_PlayerController.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_AKS_PlayerController_GetKSPlayerState_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(KS_PlayerController_eventGetKSPlayerState_Parms, ReturnValue), Z_Construct_UClass_AKS_PlayerState_NoRegister, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AKS_PlayerController_GetKSPlayerState_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AKS_PlayerController_GetKSPlayerState_Statics::NewProp_ReturnValue,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AKS_PlayerController_GetKSPlayerState_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AKS_PlayerController_GetKSPlayerState_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_AKS_PlayerController, nullptr, "GetKSPlayerState", Z_Construct_UFunction_AKS_PlayerController_GetKSPlayerState_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AKS_PlayerController_GetKSPlayerState_Statics::PropPointers), sizeof(Z_Construct_UFunction_AKS_PlayerController_GetKSPlayerState_Statics::KS_PlayerController_eventGetKSPlayerState_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x14020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AKS_PlayerController_GetKSPlayerState_Statics::Function_MetaDataParams), Z_Construct_UFunction_AKS_PlayerController_GetKSPlayerState_Statics::Function_MetaDataParams)},  };
+static_assert(sizeof(Z_Construct_UFunction_AKS_PlayerController_GetKSPlayerState_Statics::KS_PlayerController_eventGetKSPlayerState_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_AKS_PlayerController_GetKSPlayerState()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AKS_PlayerController_GetKSPlayerState_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AKS_PlayerController::execGetKSPlayerState)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	*(AKS_PlayerState**)Z_Param__Result=P_THIS->GetKSPlayerState();
+	P_NATIVE_END;
+}
+// ********** End Class AKS_PlayerController Function GetKSPlayerState *****************************
+
 // ********** Begin Class AKS_PlayerController *****************************************************
 void AKS_PlayerController::StaticRegisterNativesAKS_PlayerController()
 {
+	UClass* Class = AKS_PlayerController::StaticClass();
+	static const FNameNativePtrPair Funcs[] = {
+		{ "GetKSPlayerState", &AKS_PlayerController::execGetKSPlayerState },
+	};
+	FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 }
 FClassRegistrationInfo Z_Registration_Info_UClass_AKS_PlayerController;
 UClass* AKS_PlayerController::GetPrivateStaticClass()
@@ -83,6 +131,10 @@ struct Z_Construct_UClass_AKS_PlayerController_Statics
 	static const UECodeGen_Private::FArrayPropertyParams NewProp_DefaultMappingContexts;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
+	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
+		{ &Z_Construct_UFunction_AKS_PlayerController_GetKSPlayerState, "GetKSPlayerState" }, // 3242762420
+	};
+	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AKS_PlayerController>::IsAbstract,
 	};
@@ -109,11 +161,11 @@ const UECodeGen_Private::FClassParams Z_Construct_UClass_AKS_PlayerController_St
 	"Game",
 	&StaticCppClassTypeInfo,
 	DependentSingletons,
-	nullptr,
+	FuncInfo,
 	Z_Construct_UClass_AKS_PlayerController_Statics::PropPointers,
 	nullptr,
 	UE_ARRAY_COUNT(DependentSingletons),
-	0,
+	UE_ARRAY_COUNT(FuncInfo),
 	UE_ARRAY_COUNT(Z_Construct_UClass_AKS_PlayerController_Statics::PropPointers),
 	0,
 	0x009003A5u,
@@ -135,10 +187,10 @@ AKS_PlayerController::~AKS_PlayerController() {}
 struct Z_CompiledInDeferFile_FID_KingofSlacker_Source_KingofSlacker_Public_Gameplay_KS_PlayerController_h__Script_KingofSlacker_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AKS_PlayerController, AKS_PlayerController::StaticClass, TEXT("AKS_PlayerController"), &Z_Registration_Info_UClass_AKS_PlayerController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AKS_PlayerController), 2995005244U) },
+		{ Z_Construct_UClass_AKS_PlayerController, AKS_PlayerController::StaticClass, TEXT("AKS_PlayerController"), &Z_Registration_Info_UClass_AKS_PlayerController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AKS_PlayerController), 3823909986U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_KingofSlacker_Source_KingofSlacker_Public_Gameplay_KS_PlayerController_h__Script_KingofSlacker_2175049241(TEXT("/Script/KingofSlacker"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_KingofSlacker_Source_KingofSlacker_Public_Gameplay_KS_PlayerController_h__Script_KingofSlacker_1327246527(TEXT("/Script/KingofSlacker"),
 	Z_CompiledInDeferFile_FID_KingofSlacker_Source_KingofSlacker_Public_Gameplay_KS_PlayerController_h__Script_KingofSlacker_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_KingofSlacker_Source_KingofSlacker_Public_Gameplay_KS_PlayerController_h__Script_KingofSlacker_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

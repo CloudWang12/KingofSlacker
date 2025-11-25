@@ -4,6 +4,7 @@
 #include "Gameplay/KS_PlayerController.h"
 #include "EnhancedInputSubsystems.h"
 #include "Dialogue/DialogueComponent.h"
+#include "Gameplay/KS_PlayerState.h"
 #include "Inventory/InventoryComponent.h"
 
 AKS_PlayerController::AKS_PlayerController()
@@ -35,4 +36,11 @@ void AKS_PlayerController::BeginPlay()
 	Super::BeginPlay();
 	
 	this->SetShowMouseCursor(true);
+}
+
+AKS_PlayerState* AKS_PlayerController::GetKSPlayerState()
+{
+	AKS_PlayerState*PS = GetPlayerState<AKS_PlayerState>();
+	if (!PS) return nullptr;
+	return PS;
 }
