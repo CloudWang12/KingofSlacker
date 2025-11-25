@@ -7,6 +7,7 @@
 #include "KS_PlayerController.generated.h"
 
 
+class AKS_PlayerState;
 class UDialogueComponent;
 class UInventoryComponent;
 class UInputMappingContext;
@@ -34,5 +35,8 @@ protected:
 
 	virtual void BeginPlay() override;
 
-	
+public:
+
+	UFUNCTION(BlueprintPure,Category="AKS | Getter")
+	AKS_PlayerState*GetKSPlayerState();
 };

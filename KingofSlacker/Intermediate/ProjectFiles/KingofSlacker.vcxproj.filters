@@ -12,6 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <None Include="..\..\.vsconfig" />
+    <None Include="..\..\KingofSlacker.sln.DotSettings.user" />
     <Filter Include="Config">
       <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
     </Filter>
@@ -1581,10 +1582,19 @@
     <Filter Include="Source\KingofSlacker\Private\Gameplay">
       <UniqueIdentifier>{911C2CC4-9468-39A9-9247-D366AA4E8168}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\KingofSlacker\Private\Gameplay\KS_BlueprintLibrary.cpp">
+      <Filter>Source\KingofSlacker\Private\Gameplay</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\KingofSlacker\Private\Gameplay\KS_GameModeBase.cpp">
       <Filter>Source\KingofSlacker\Private\Gameplay</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\KingofSlacker\Private\Gameplay\KS_HUD.cpp">
+      <Filter>Source\KingofSlacker\Private\Gameplay</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\KingofSlacker\Private\Gameplay\KS_PlayerController.cpp">
+      <Filter>Source\KingofSlacker\Private\Gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\KingofSlacker\Private\Gameplay\KS_PlayerState.cpp">
       <Filter>Source\KingofSlacker\Private\Gameplay</Filter>
     </ClCompile>
     <Filter Include="Source\KingofSlacker\Private\Inventory">
@@ -1598,6 +1608,12 @@
     </ClCompile>
     <ClCompile Include="..\..\Source\KingofSlacker\Private\Inventory\ItemType.cpp">
       <Filter>Source\KingofSlacker\Private\Inventory</Filter>
+    </ClCompile>
+    <Filter Include="Source\KingofSlacker\Private\UI">
+      <UniqueIdentifier>{2A2466D0-65FA-3781-BD5F-D1956749A737}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\KingofSlacker\Private\UI\KS_MainWidgetClass.cpp">
+      <Filter>Source\KingofSlacker\Private\UI</Filter>
     </ClCompile>
     <Filter Include="Source\KingofSlacker\Public">
       <UniqueIdentifier>{DBA1115A-1EB9-3839-A3A8-24289C2B6F34}</UniqueIdentifier>
@@ -1635,10 +1651,19 @@
     <Filter Include="Source\KingofSlacker\Public\Gameplay">
       <UniqueIdentifier>{56719F8C-04A2-302B-8966-2599C1FFD939}</UniqueIdentifier>
     </Filter>
+    <ClInclude Include="..\..\Source\KingofSlacker\Public\Gameplay\KS_BlueprintLibrary.h">
+      <Filter>Source\KingofSlacker\Public\Gameplay</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\KingofSlacker\Public\Gameplay\KS_GameModeBase.h">
       <Filter>Source\KingofSlacker\Public\Gameplay</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\KingofSlacker\Public\Gameplay\KS_HUD.h">
+      <Filter>Source\KingofSlacker\Public\Gameplay</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\KingofSlacker\Public\Gameplay\KS_PlayerController.h">
+      <Filter>Source\KingofSlacker\Public\Gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\KingofSlacker\Public\Gameplay\KS_PlayerState.h">
       <Filter>Source\KingofSlacker\Public\Gameplay</Filter>
     </ClInclude>
     <Filter Include="Source\KingofSlacker\Public\Inventory">
@@ -1652,6 +1677,12 @@
     </ClInclude>
     <ClInclude Include="..\..\Source\KingofSlacker\Public\Inventory\ItemType.h">
       <Filter>Source\KingofSlacker\Public\Inventory</Filter>
+    </ClInclude>
+    <Filter Include="Source\KingofSlacker\Public\UI">
+      <UniqueIdentifier>{DC5E896A-EFCB-3C39-9EDD-AB0397A49ACA}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\KingofSlacker\Public\UI\KS_MainWidgetClass.h">
+      <Filter>Source\KingofSlacker\Public\UI</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

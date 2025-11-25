@@ -16,10 +16,16 @@
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
+class AKS_PlayerState;
+
 // ********** Begin Class AKS_PlayerController *****************************************************
+#define FID_KingofSlacker_Source_KingofSlacker_Public_Gameplay_KS_PlayerController_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execGetKSPlayerState);
+
+
 KINGOFSLACKER_API UClass* Z_Construct_UClass_AKS_PlayerController_NoRegister();
 
-#define FID_KingofSlacker_Source_KingofSlacker_Public_Gameplay_KS_PlayerController_h_17_INCLASS_NO_PURE_DECLS \
+#define FID_KingofSlacker_Source_KingofSlacker_Public_Gameplay_KS_PlayerController_h_18_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAKS_PlayerController(); \
 	friend struct Z_Construct_UClass_AKS_PlayerController_Statics; \
@@ -30,7 +36,7 @@ public: \
 	DECLARE_SERIALIZER(AKS_PlayerController)
 
 
-#define FID_KingofSlacker_Source_KingofSlacker_Public_Gameplay_KS_PlayerController_h_17_ENHANCED_CONSTRUCTORS \
+#define FID_KingofSlacker_Source_KingofSlacker_Public_Gameplay_KS_PlayerController_h_18_ENHANCED_CONSTRUCTORS \
 	/** Deleted move- and copy-constructors, should never be used */ \
 	AKS_PlayerController(AKS_PlayerController&&) = delete; \
 	AKS_PlayerController(const AKS_PlayerController&) = delete; \
@@ -40,12 +46,13 @@ public: \
 	NO_API virtual ~AKS_PlayerController();
 
 
-#define FID_KingofSlacker_Source_KingofSlacker_Public_Gameplay_KS_PlayerController_h_14_PROLOG
-#define FID_KingofSlacker_Source_KingofSlacker_Public_Gameplay_KS_PlayerController_h_17_GENERATED_BODY \
+#define FID_KingofSlacker_Source_KingofSlacker_Public_Gameplay_KS_PlayerController_h_15_PROLOG
+#define FID_KingofSlacker_Source_KingofSlacker_Public_Gameplay_KS_PlayerController_h_18_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_KingofSlacker_Source_KingofSlacker_Public_Gameplay_KS_PlayerController_h_17_INCLASS_NO_PURE_DECLS \
-	FID_KingofSlacker_Source_KingofSlacker_Public_Gameplay_KS_PlayerController_h_17_ENHANCED_CONSTRUCTORS \
+	FID_KingofSlacker_Source_KingofSlacker_Public_Gameplay_KS_PlayerController_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_KingofSlacker_Source_KingofSlacker_Public_Gameplay_KS_PlayerController_h_18_INCLASS_NO_PURE_DECLS \
+	FID_KingofSlacker_Source_KingofSlacker_Public_Gameplay_KS_PlayerController_h_18_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
