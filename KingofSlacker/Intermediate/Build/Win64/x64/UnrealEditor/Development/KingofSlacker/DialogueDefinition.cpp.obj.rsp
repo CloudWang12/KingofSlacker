@@ -1,12 +1,12 @@
-"G:/GitHubClone/KingofSlacker/KingofSlacker/Source/KingofSlacker/Private/Dialogue/DialogueDefinition.cpp"
-@"G:/GitHubClone/KingofSlacker/KingofSlacker/Intermediate/Build/Win64/x64/UnrealEditor/Development/KingofSlacker/KingofSlacker.Shared.rsp"
-/FI"G:/GitHubClone/KingofSlacker/KingofSlacker/Intermediate/Build/Win64/x64/KingofSlackerEditor/Development/UnrealEd/SharedPCH.UnrealEd.Project.ValApi.ValExpApi.Cpp20.h"
-/FI"G:/GitHubClone/KingofSlacker/KingofSlacker/Intermediate/Build/Win64/x64/UnrealEditor/Development/KingofSlacker/Definitions.KingofSlacker.h"
-/Yu"G:/GitHubClone/KingofSlacker/KingofSlacker/Intermediate/Build/Win64/x64/KingofSlackerEditor/Development/UnrealEd/SharedPCH.UnrealEd.Project.ValApi.ValExpApi.Cpp20.h"
-/Fp"G:/GitHubClone/KingofSlacker/KingofSlacker/Intermediate/Build/Win64/x64/KingofSlackerEditor/Development/UnrealEd/SharedPCH.UnrealEd.Project.ValApi.ValExpApi.Cpp20.h.pch"
-/Fo"G:/GitHubClone/KingofSlacker/KingofSlacker/Intermediate/Build/Win64/x64/UnrealEditor/Development/KingofSlacker/DialogueDefinition.cpp.obj"
-/experimental:log "G:/GitHubClone/KingofSlacker/KingofSlacker/Intermediate/Build/Win64/x64/UnrealEditor/Development/KingofSlacker/DialogueDefinition.cpp.sarif"
-/sourceDependencies "G:/GitHubClone/KingofSlacker/KingofSlacker/Intermediate/Build/Win64/x64/UnrealEditor/Development/KingofSlacker/DialogueDefinition.cpp.dep.json"
+"B:/UnrealEngine/Project/Github/KingofSlacker/KingofSlacker/Source/KingofSlacker/Private/Dialogue/DialogueDefinition.cpp"
+@"B:/UnrealEngine/Project/Github/KingofSlacker/KingofSlacker/Intermediate/Build/Win64/x64/UnrealEditor/Development/KingofSlacker/KingofSlacker.Shared.rsp"
+/FI"B:/UnrealEngine/Project/Github/KingofSlacker/KingofSlacker/Intermediate/Build/Win64/x64/KingofSlackerEditor/Development/UnrealEd/SharedPCH.UnrealEd.Project.ValApi.ValExpApi.Cpp20.h"
+/FI"B:/UnrealEngine/Project/Github/KingofSlacker/KingofSlacker/Intermediate/Build/Win64/x64/UnrealEditor/Development/KingofSlacker/Definitions.KingofSlacker.h"
+/Yu"B:/UnrealEngine/Project/Github/KingofSlacker/KingofSlacker/Intermediate/Build/Win64/x64/KingofSlackerEditor/Development/UnrealEd/SharedPCH.UnrealEd.Project.ValApi.ValExpApi.Cpp20.h"
+/Fp"B:/UnrealEngine/Project/Github/KingofSlacker/KingofSlacker/Intermediate/Build/Win64/x64/KingofSlackerEditor/Development/UnrealEd/SharedPCH.UnrealEd.Project.ValApi.ValExpApi.Cpp20.h.pch"
+/Fo"B:/UnrealEngine/Project/Github/KingofSlacker/KingofSlacker/Intermediate/Build/Win64/x64/UnrealEditor/Development/KingofSlacker/DialogueDefinition.cpp.obj"
+/experimental:log "B:/UnrealEngine/Project/Github/KingofSlacker/KingofSlacker/Intermediate/Build/Win64/x64/UnrealEditor/Development/KingofSlacker/DialogueDefinition.cpp.sarif"
+/sourceDependencies "B:/UnrealEngine/Project/Github/KingofSlacker/KingofSlacker/Intermediate/Build/Win64/x64/UnrealEditor/Development/KingofSlacker/DialogueDefinition.cpp.dep.json"
 /d2ssa-cfg-question-
 /Zc:inline
 /nologo

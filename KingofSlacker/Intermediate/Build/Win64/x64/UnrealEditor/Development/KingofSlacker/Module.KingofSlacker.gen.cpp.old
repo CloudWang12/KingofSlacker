@@ -3,6 +3,7 @@
 #include "G:/GitHubClone/KingofSlacker/KingofSlacker/Intermediate/Build/Win64/UnrealEditor/Inc/KingofSlacker/UHT/CharacterBase.gen.cpp"
 #include "G:/GitHubClone/KingofSlacker/KingofSlacker/Intermediate/Build/Win64/UnrealEditor/Inc/KingofSlacker/UHT/CharacterNPC.gen.cpp"
 #include "G:/GitHubClone/KingofSlacker/KingofSlacker/Intermediate/Build/Win64/UnrealEditor/Inc/KingofSlacker/UHT/CharacterTemplate.gen.cpp"
+#include "G:/GitHubClone/KingofSlacker/KingofSlacker/Intermediate/Build/Win64/UnrealEditor/Inc/KingofSlacker/UHT/DA_DialogueDefinitions.gen.cpp"
 #include "G:/GitHubClone/KingofSlacker/KingofSlacker/Intermediate/Build/Win64/UnrealEditor/Inc/KingofSlacker/UHT/DialogueComponent.gen.cpp"
 #include "G:/GitHubClone/KingofSlacker/KingofSlacker/Intermediate/Build/Win64/UnrealEditor/Inc/KingofSlacker/UHT/DialogueDefinition.gen.cpp"
 #include "G:/GitHubClone/KingofSlacker/KingofSlacker/Intermediate/Build/Win64/UnrealEditor/Inc/KingofSlacker/UHT/InventoryComponent.gen.cpp"

@@ -16,6 +16,6 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = KingofSlackerModuleRules
-build_property.ProjectDir = G:\GitHubClone\KingofSlacker\KingofSlacker\Intermediate\Build\BuildRulesProjects\KingofSlackerModuleRules\
+build_property.ProjectDir = B:\UnrealEngine\Project\Github\KingofSlacker\KingofSlacker\Intermediate\Build\BuildRulesProjects\KingofSlackerModuleRules\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
