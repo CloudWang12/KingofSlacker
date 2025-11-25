@@ -29,6 +29,22 @@ class KINGOFSLACKER_API UTaskComponent : public UActorComponent
 	GENERATED_BODY()
 
 
+public:
+
+	UPROPERTY(VisibleAnywhere)
+	FTimerHandle TimerHandle;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
+	int day = 1;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
+	int month = 1;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
+	int year = 1;
+	
+
+
 public:	
 	
 	UTaskComponent();
@@ -47,6 +63,14 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	void ShowTask();
+
+	UFUNCTION(BlueprintCallable)
+	void StartTimer();
+
+	UFUNCTION(BlueprintCallable)
+	void StopTimer();
+
+	void TimeManager();
 	
 
 protected:

@@ -32,6 +32,45 @@ void UTaskComponent::ShowTask()
 	}
 }
 
+void UTaskComponent::StartTimer()
+{
+	GetWorld()->GetTimerManager().SetTimer(
+		TimerHandle,
+		this,
+		&UTaskComponent::TimeManager,
+		1.f,
+		true
+		);
+}
+
+void UTaskComponent::StopTimer()
+{
+	GetWorld()->GetTimerManager().ClearTimer(TimerHandle);
+}
+
+void UTaskComponent::TimeManager()
+{
+	day++;
+	int Max_day = 30;
+	if (month==2)
+	{
+		Max_day = 28;
+	}
+	else if (month==1 || month==3 || month==5 ||month==7|| month==8 || month==10 || month==12)
+	{
+		Max_day = 31;
+	}
+	
+	//int Local_day = FMath::Clamp(day,1,Max_day);
+
+	if (day > Max_day)
+	{
+		month++;
+		day = 1 ;
+	}
+	
+}
+
 void UTaskComponent::BeginPlay()
 {
 	Super::BeginPlay();
