@@ -37,8 +37,7 @@
 /NOIMPLIB
 /NOEXP
 /NATVIS:"../Intermediate/Build/Win64/x64/UnrealEditor/Development/RenderCore/RenderCore.natvis"
-"B:/UnrealEngine/Project/Github/KingofSlacker/KingofSlacker/Plugins/Developer/RiderLink/Intermediate/Build/Win64/x64/UnrealEditor/Development/RiderShaderInfo/RiderShaderInfo.cpp.obj"
-"B:/UnrealEngine/Project/Github/KingofSlacker/KingofSlacker/Plugins/Developer/RiderLink/Intermediate/Build/Win64/x64/UnrealEditor/Development/RiderShaderInfo/PerModuleInline.gen.cpp.obj"
+"B:/UnrealEngine/Project/Github/KingofSlacker/KingofSlacker/Plugins/Developer/RiderLink/Intermediate/Build/Win64/x64/UnrealEditor/Development/RiderShaderInfo/Module.RiderShaderInfo.cpp.obj"
 "B:/UnrealEngine/Project/Github/KingofSlacker/KingofSlacker/Plugins/Developer/RiderLink/Intermediate/Build/Win64/x64/UnrealEditor/Development/RiderShaderInfo/Default.rc2.res"
 "../Intermediate/Build/Win64/x64/UnrealEditor/Development/Core/UnrealEditor-Core.lib"
 "../Intermediate/Build/Win64/x64/UnrealEditor/Development/Projects/UnrealEditor-Projects.lib"

@@ -6,7 +6,7 @@
 /NAME:"UnrealEditor-KingofSlacker.dll"
 /IGNORE:4221
 /NODEFAULTLIB
-"G:/GitHubClone/KingofSlacker/KingofSlacker/Intermediate/Build/Win64/x64/KingofSlackerEditor/Development/UnrealEd/SharedPCH.UnrealEd.Project.ValApi.ValExpApi.Cpp20.h.obj"
-"G:/GitHubClone/KingofSlacker/KingofSlacker/Intermediate/Build/Win64/x64/UnrealEditor/Development/KingofSlacker/Module.KingofSlacker.cpp.obj"
-"G:/GitHubClone/KingofSlacker/KingofSlacker/Intermediate/Build/Win64/x64/UnrealEditor/Development/KingofSlacker/Default.rc2.res"
-/OUT:"G:/GitHubClone/KingofSlacker/KingofSlacker/Intermediate/Build/Win64/x64/UnrealEditor/Development/KingofSlacker/UnrealEditor-KingofSlacker.lib"
+"B:/UnrealEngine/Project/Github/KingofSlacker/KingofSlacker/Intermediate/Build/Win64/x64/KingofSlackerEditor/Development/UnrealEd/SharedPCH.UnrealEd.Project.ValApi.ValExpApi.Cpp20.h.obj"
+"B:/UnrealEngine/Project/Github/KingofSlacker/KingofSlacker/Intermediate/Build/Win64/x64/UnrealEditor/Development/KingofSlacker/Module.KingofSlacker.cpp.obj"
+"B:/UnrealEngine/Project/Github/KingofSlacker/KingofSlacker/Intermediate/Build/Win64/x64/UnrealEditor/Development/KingofSlacker/Default.rc2.res"
+/OUT:"B:/UnrealEngine/Project/Github/KingofSlacker/KingofSlacker/Intermediate/Build/Win64/x64/UnrealEditor/Development/KingofSlacker/UnrealEditor-KingofSlacker.lib"

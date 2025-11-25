@@ -36,12 +36,7 @@
 /FUNCTIONPADMIN:6
 /NOIMPLIB
 /NOEXP
-"B:/UnrealEngine/Project/Github/KingofSlacker/KingofSlacker/Plugins/Developer/RiderLink/Intermediate/Build/Win64/x64/UnrealEditor/Development/RiderDebuggerSupport/BlueprintStackGetter.cpp.obj"
-"B:/UnrealEngine/Project/Github/KingofSlacker/KingofSlacker/Plugins/Developer/RiderLink/Intermediate/Build/Win64/x64/UnrealEditor/Development/RiderDebuggerSupport/DebugLogger.cpp.obj"
-"B:/UnrealEngine/Project/Github/KingofSlacker/KingofSlacker/Plugins/Developer/RiderLink/Intermediate/Build/Win64/x64/UnrealEditor/Development/RiderDebuggerSupport/RiderDebuggerSupport.cpp.obj"
-"B:/UnrealEngine/Project/Github/KingofSlacker/KingofSlacker/Plugins/Developer/RiderLink/Intermediate/Build/Win64/x64/UnrealEditor/Development/RiderDebuggerSupport/UnrealFunctions.cpp.obj"
-"B:/UnrealEngine/Project/Github/KingofSlacker/KingofSlacker/Plugins/Developer/RiderLink/Intermediate/Build/Win64/x64/UnrealEditor/Development/RiderDebuggerSupport/WideStringWrapper.cpp.obj"
-"B:/UnrealEngine/Project/Github/KingofSlacker/KingofSlacker/Plugins/Developer/RiderLink/Intermediate/Build/Win64/x64/UnrealEditor/Development/RiderDebuggerSupport/PerModuleInline.gen.cpp.obj"
+"B:/UnrealEngine/Project/Github/KingofSlacker/KingofSlacker/Plugins/Developer/RiderLink/Intermediate/Build/Win64/x64/UnrealEditor/Development/RiderDebuggerSupport/Module.RiderDebuggerSupport.cpp.obj"
 "B:/UnrealEngine/Project/Github/KingofSlacker/KingofSlacker/Plugins/Developer/RiderLink/Intermediate/Build/Win64/x64/UnrealEditor/Development/RiderDebuggerSupport/Default.rc2.res"
 "../Intermediate/Build/Win64/x64/UnrealEditor/Development/Core/UnrealEditor-Core.lib"
 "../Intermediate/Build/Win64/x64/UnrealEditor/Development/CoreUObject/UnrealEditor-CoreUObject.lib"

@@ -36,8 +36,7 @@
 /FUNCTIONPADMIN:6
 /NOIMPLIB
 /NOEXP
-"B:/UnrealEngine/Project/Github/KingofSlacker/KingofSlacker/Plugins/Developer/RiderLink/Intermediate/Build/Win64/x64/UnrealEditor/Development/RiderGameControl/RiderGameControl.cpp.obj"
-"B:/UnrealEngine/Project/Github/KingofSlacker/KingofSlacker/Plugins/Developer/RiderLink/Intermediate/Build/Win64/x64/UnrealEditor/Development/RiderGameControl/PerModuleInline.gen.cpp.obj"
+"B:/UnrealEngine/Project/Github/KingofSlacker/KingofSlacker/Plugins/Developer/RiderLink/Intermediate/Build/Win64/x64/UnrealEditor/Development/RiderGameControl/Module.RiderGameControl.cpp.obj"
 "B:/UnrealEngine/Project/Github/KingofSlacker/KingofSlacker/Plugins/Developer/RiderLink/Intermediate/Build/Win64/x64/UnrealEditor/Development/RiderGameControl/Default.rc2.res"
 "B:/UnrealEngine/Project/Github/KingofSlacker/KingofSlacker/Plugins/Developer/RiderLink/Intermediate/Build/Win64/x64/UnrealEditor/Development/RD/UnrealEditor-RD.lib"
 "B:/UnrealEngine/Project/Github/KingofSlacker/KingofSlacker/Plugins/Developer/RiderLink/Intermediate/Build/Win64/x64/UnrealEditor/Development/RiderLink/UnrealEditor-RiderLink.lib"

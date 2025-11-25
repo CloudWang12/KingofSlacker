@@ -36,9 +36,7 @@
 /FUNCTIONPADMIN:6
 /NOIMPLIB
 /NOEXP
-"B:/UnrealEngine/Project/Github/KingofSlacker/KingofSlacker/Plugins/Developer/RiderLink/Intermediate/Build/Win64/x64/UnrealEditor/Development/RiderBlueprint/BlueprintProvider.cpp.obj"
-"B:/UnrealEngine/Project/Github/KingofSlacker/KingofSlacker/Plugins/Developer/RiderLink/Intermediate/Build/Win64/x64/UnrealEditor/Development/RiderBlueprint/RiderBlueprint.cpp.obj"
-"B:/UnrealEngine/Project/Github/KingofSlacker/KingofSlacker/Plugins/Developer/RiderLink/Intermediate/Build/Win64/x64/UnrealEditor/Development/RiderBlueprint/PerModuleInline.gen.cpp.obj"
+"B:/UnrealEngine/Project/Github/KingofSlacker/KingofSlacker/Plugins/Developer/RiderLink/Intermediate/Build/Win64/x64/UnrealEditor/Development/RiderBlueprint/Module.RiderBlueprint.cpp.obj"
 "B:/UnrealEngine/Project/Github/KingofSlacker/KingofSlacker/Plugins/Developer/RiderLink/Intermediate/Build/Win64/x64/UnrealEditor/Development/RiderBlueprint/Default.rc2.res"
 "../Intermediate/Build/Win64/x64/UnrealEditor/Development/Core/UnrealEditor-Core.lib"
 "../Intermediate/Build/Win64/x64/UnrealEditor/Development/SlateCore/UnrealEditor-SlateCore.lib"

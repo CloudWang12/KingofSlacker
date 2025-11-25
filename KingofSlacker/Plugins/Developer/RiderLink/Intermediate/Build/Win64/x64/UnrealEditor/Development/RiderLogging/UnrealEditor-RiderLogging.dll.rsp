@@ -36,9 +36,7 @@
 /FUNCTIONPADMIN:6
 /NOIMPLIB
 /NOEXP
-"B:/UnrealEngine/Project/Github/KingofSlacker/KingofSlacker/Plugins/Developer/RiderLink/Intermediate/Build/Win64/x64/UnrealEditor/Development/RiderLogging/RiderLogging.cpp.obj"
-"B:/UnrealEngine/Project/Github/KingofSlacker/KingofSlacker/Plugins/Developer/RiderLink/Intermediate/Build/Win64/x64/UnrealEditor/Development/RiderLogging/RiderOutputDevice.cpp.obj"
-"B:/UnrealEngine/Project/Github/KingofSlacker/KingofSlacker/Plugins/Developer/RiderLink/Intermediate/Build/Win64/x64/UnrealEditor/Development/RiderLogging/PerModuleInline.gen.cpp.obj"
+"B:/UnrealEngine/Project/Github/KingofSlacker/KingofSlacker/Plugins/Developer/RiderLink/Intermediate/Build/Win64/x64/UnrealEditor/Development/RiderLogging/Module.RiderLogging.cpp.obj"
 "B:/UnrealEngine/Project/Github/KingofSlacker/KingofSlacker/Plugins/Developer/RiderLink/Intermediate/Build/Win64/x64/UnrealEditor/Development/RiderLogging/Default.rc2.res"
 "../Intermediate/Build/Win64/x64/UnrealEditor/Development/Core/UnrealEditor-Core.lib"
 "B:/UnrealEngine/Project/Github/KingofSlacker/KingofSlacker/Plugins/Developer/RiderLink/Intermediate/Build/Win64/x64/UnrealEditor/Development/RD/UnrealEditor-RD.lib"
