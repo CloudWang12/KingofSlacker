@@ -6,6 +6,7 @@
 #include "Dialogue/DialogueComponent.h"
 #include "Gameplay/KS_PlayerState.h"
 #include "Inventory/InventoryComponent.h"
+#include "Kismet/KismetSystemLibrary.h"
 
 AKS_PlayerController::AKS_PlayerController()
 {
@@ -37,6 +38,7 @@ void AKS_PlayerController::BeginPlay()
 	
 	this->SetShowMouseCursor(true);
 }
+
 
 AKS_PlayerState* AKS_PlayerController::GetKSPlayerState()
 {

@@ -7,7 +7,8 @@ AKS_PlayerState::AKS_PlayerState()
 {
 	Money = 0;
 	Income = 600;
-	OKR = 0.f;
+	OKR = FMath::Clamp(OKR,0,100.f);
+	OKRFailedCount = 0;
 	Expenditure=300;
 	selfStrive = 0.f;
 	selfInfect = 0.f;
@@ -19,4 +20,5 @@ AKS_PlayerState::AKS_PlayerState()
 	Fish_Energy = 0.f;
 	Work_Efficiency = 0.f;
 	Stealth_Skill = 0.f;
+	Health = 100.f;
 }

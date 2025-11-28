@@ -1,27 +1,43 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+
 
 
 #include "Inventory/ItemActor.h"
 
-// Sets default values
+
+
 AItemActor::AItemActor()
 {
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	PrimaryActorTick.bCanEverTick = true;
-
-}
-
-// Called when the game starts or when spawned
-void AItemActor::BeginPlay()
-{
-	Super::BeginPlay();
+ 	
+	PrimaryActorTick.bCanEverTick = false;
+	Mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("StaticMesh"));
+	
+	SetRootComponent(Mesh);
+	
+	
 	
 }
 
-// Called every frame
+
+void AItemActor::BeginPlay()
+{
+	Super::BeginPlay();
+	if (ItemDataTable)
+	{
+		ItemType = *ItemDataTable->FindRow<FItemType>(ItemName,"Context");
+	}
+	
+}
+
+
 void AItemActor::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+}
+
+void AItemActor::Interact_Implementation()
+{
+	IInteractInterface::Interact_Implementation();
+	//UKismetSystemLibrary::PrintString(this,TEXT("Hello"),true,false,FLinearColor::Red,5.f);
 }
 

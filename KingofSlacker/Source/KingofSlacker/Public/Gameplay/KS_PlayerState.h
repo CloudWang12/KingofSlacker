@@ -28,6 +28,9 @@ public:
 	float OKR;
 
 	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Attributes | Global")
+	int OKRFailedCount;
+
+	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Attributes | Global")
 	int Expenditure;
 
 	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Attributes | Global")
@@ -41,6 +44,9 @@ public:
 
 	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Attributes | Global")
 	float groupInfect;
+
+
+	
 
 	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Attributes | Player")
 	float Energy_Cap;
@@ -56,5 +62,7 @@ public:
 
 	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Attributes | Player")
 	float Stealth_Skill;
-	
+
+	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Attributes | Player")
+	float Health;
 };
