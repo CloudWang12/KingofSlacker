@@ -5,20 +5,22 @@
 
 AKS_PlayerState::AKS_PlayerState()
 {
-	Money = 0;
-	Income = 600;
-	OKR = FMath::Clamp(OKR,0,100.f);
-	OKRFailedCount = 0;
-	Expenditure=300;
-	selfStrive = 0.f;
-	selfInfect = 0.f;
-	groupStrive = 0.f;
-	groupInfect = 0.f;
+	Money = 888;
+	Income = 150;
+	OKR = 3.f;
+
+	Fish_Energy = 15.f;
+	MaxFish_Energy = 100.f;
+	Fish_EnergyEfficiency = 1.f;
+	Fish_Time = 3.f;
+
+	Work_Efficiency = 1.f;
+	Work_Time = 3.f;
+
+	Strive = 88.f;
+	MaxStrive = 100.f;
+
+	Health = 50.f;
+	MaxHealth = 100.f;
 	
-	Energy_Cap = 0.f;
-	Personal_Struggle = 0.f;
-	Fish_Energy = 0.f;
-	Work_Efficiency = 0.f;
-	Stealth_Skill = 0.f;
-	Health = 100.f;
 }

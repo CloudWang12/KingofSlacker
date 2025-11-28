@@ -6,6 +6,8 @@
 #include "GameFramework/PlayerState.h"
 #include "KS_PlayerState.generated.h"
 
+
+
 /**
  * 
  */
@@ -27,42 +29,36 @@ public:
 	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Attributes | Global")
 	float OKR;
 
-	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Attributes | Global")
-	int OKRFailedCount;
-
-	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Attributes | Global")
-	int Expenditure;
-
-	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Attributes | Global")
-	float selfStrive;
-
-	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Attributes | Global")
-	float groupStrive;
-
-	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Attributes | Global")
-	float selfInfect;
-
-	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Attributes | Global")
-	float groupInfect;
-
 
 	
+	
+	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Attributes | Player")
+	int Fish_Energy;
 
 	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Attributes | Player")
-	float Energy_Cap;
+	int MaxFish_Energy;
 
 	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Attributes | Player")
-	float Personal_Struggle;
+	float Fish_EnergyEfficiency;
 
 	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Attributes | Player")
-	float Fish_Energy;
+	float Fish_Time;
+
+	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Attributes | Player")
+	float Strive;
+
+	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Attributes | Player")
+	float MaxStrive;
+	
+	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Attributes | Player")
+	float Work_Time;
 
 	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Attributes | Player")
 	float Work_Efficiency;
-
-	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Attributes | Player")
-	float Stealth_Skill;
-
+	
 	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Attributes | Player")
 	float Health;
+
+	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Attributes | Player")
+	float MaxHealth;
 };
