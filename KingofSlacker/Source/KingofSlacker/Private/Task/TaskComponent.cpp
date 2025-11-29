@@ -66,9 +66,17 @@ void UTaskComponent::TimeManager()
 	if (day > Max_day)
 	{
 		month++;
+		OnMonthChanged.Broadcast(month);
+		if (month ==1)
+		{
+			year++;
+			month = 1;
+			OnYearChanged.Broadcast(year);
+		}
 		day = 1 ;
 	}
-	
+
+	OnDayChanged.Broadcast(day);
 }
 
 void UTaskComponent::BeginPlay()

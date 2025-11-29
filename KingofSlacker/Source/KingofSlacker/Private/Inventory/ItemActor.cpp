@@ -35,9 +35,8 @@ void AItemActor::Tick(float DeltaTime)
 
 }
 
-void AItemActor::Interact_Implementation()
+void AItemActor::Interact_Implementation(bool bInRange)
 {
-	IInteractInterface::Interact_Implementation();
-	//UKismetSystemLibrary::PrintString(this,TEXT("Hello"),true,false,FLinearColor::Red,5.f);
+	IInteractInterface::Interact_Implementation(bInRange);
 }
 

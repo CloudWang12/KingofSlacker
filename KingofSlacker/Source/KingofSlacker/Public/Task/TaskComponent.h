@@ -22,6 +22,11 @@ struct FTaskDefinition : public FTableRowBase
 	
 };
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnDayDelegate,int,Day);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnMonthDelegate,int,Month);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnYearDelegate,int,Year);
+
+
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class KINGOFSLACKER_API UTaskComponent : public UActorComponent
@@ -42,6 +47,15 @@ public:
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
 	int year = 1;
+
+	UPROPERTY(BlueprintAssignable)
+	FOnDayDelegate OnDayChanged;
+
+	UPROPERTY(BlueprintAssignable)
+	FOnMonthDelegate OnMonthChanged;
+
+	UPROPERTY(BlueprintAssignable)
+	FOnYearDelegate OnYearChanged;
 	
 
 
@@ -61,6 +75,8 @@ public:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
 	UDataTable* TaskDataTable;
 
+	
+
 	UFUNCTION(BlueprintCallable)
 	void ShowTask();
 
@@ -71,6 +87,8 @@ public:
 	void StopTimer();
 
 	void TimeManager();
+
+
 	
 
 protected:
