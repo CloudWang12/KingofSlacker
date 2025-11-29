@@ -13,5 +13,23 @@ UCLASS()
 class KINGOFSLACKER_API ACharacterNPC : public ACharacterTemplate
 {
 	GENERATED_BODY()
+
+
+	public:
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category="NPC", meta=(AllowPrivateAccess=true))
+	float NPCHealth;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category="NPC", meta=(AllowPrivateAccess=true))
+	float NPCMaxHealth;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category="NPC", meta=(AllowPrivateAccess=true))
+	int FishProgress;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category="NPC", meta=(AllowPrivateAccess=true))
+	int MaxFishProgress;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category="NPC")
+	float FishHealthTime;
 	
 };

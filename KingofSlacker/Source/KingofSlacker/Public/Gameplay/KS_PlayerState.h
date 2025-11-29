@@ -6,6 +6,14 @@
 #include "GameFramework/PlayerState.h"
 #include "KS_PlayerState.generated.h"
 
+
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnKPIDelegate,float,InKPI);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnMoneyDelegate,int,InMoney);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnFishDelegate,int,InFish);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnStriveDelegate,float,InStrive);
+
+
+
 /**
  * 
  */
@@ -18,6 +26,18 @@ public:
 
 	AKS_PlayerState();
 
+
+	UPROPERTY(BlueprintAssignable, Category="KingofSlacker")
+	FOnKPIDelegate OnKPIChanged;
+	UPROPERTY(BlueprintAssignable, Category="KingofSlacker")
+	FOnMoneyDelegate OnMoneyChanged;
+	UPROPERTY(BlueprintAssignable, Category="KingofSlacker")
+	FOnFishDelegate OnFishChanged;
+	UPROPERTY(BlueprintAssignable, Category="KingofSlacker")
+	FOnStriveDelegate OnStriveChanged;
+
+	
+
 	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Attributes | Global")
 	int Money;
 
@@ -25,36 +45,81 @@ public:
 	int Income;
 
 	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Attributes | Global")
-	float OKR;
+	float KPI;
 
 	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Attributes | Global")
-	int Expenditure;
+	float KPICount;
 
 	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Attributes | Global")
-	float selfStrive;
+	float MaxKPI;
 
-	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Attributes | Global")
-	float groupStrive;
 
-	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Attributes | Global")
-	float selfInfect;
-
-	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Attributes | Global")
-	float groupInfect;
+	
+	
+	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Attributes | Player")
+	int Fish_Energy;
 
 	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Attributes | Player")
-	float Energy_Cap;
+	int Fish_Energy_Count;
 
 	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Attributes | Player")
-	float Personal_Struggle;
+	int MaxFish_Energy;
 
 	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Attributes | Player")
-	float Fish_Energy;
+	float Fish_EnergyEfficiency;
+
+	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Attributes | Player")
+	float Fish_Time;
+
+	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Attributes | Player")
+	float Strive;
+
+	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Attributes | Player")
+	float StriveCount;
+
+	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Attributes | Player")
+	float MaxStrive;
+	
+	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Attributes | Player")
+	float Work_Time;
 
 	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Attributes | Player")
 	float Work_Efficiency;
+	
+	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Attributes | Player")
+	float Health;
 
 	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Attributes | Player")
-	float Stealth_Skill;
-	
+	float MaxHealth;
+
+
+	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
+	void AddUpFishEnergy();
+
+	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
+	void AddUpMaxFishEnergy(int InCountAddup);
+
+	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
+	void AddUpFishEnergyEfficiency(int InCountAddup);
+
+	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
+	void ConsumeFishEnergy(int InCountConsume);
+
+	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
+	void AddupKPI();
+
+	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
+	void ConclusionKPI();
+
+	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
+	void AddUpWorkTime();
+
+	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
+	void AddUpWorkEfficiency(int ItemCount);
+
+	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
+	void AddUpStrive();
+
+	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
+	void AddUpMaxStrive(float InCountAddup);
 };

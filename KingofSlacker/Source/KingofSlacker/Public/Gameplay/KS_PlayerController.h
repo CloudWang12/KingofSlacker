@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "InteractInterface.h"
 #include "GameFramework/PlayerController.h"
 #include "KS_PlayerController.generated.h"
 
@@ -34,6 +35,7 @@ protected:
 	virtual void SetupInputComponent() override;
 
 	virtual void BeginPlay() override;
+
 
 public:
 

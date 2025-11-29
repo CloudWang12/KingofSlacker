@@ -3,24 +3,44 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "ItemType.h"
 #include "GameFramework/Actor.h"
+#include "Gameplay/InteractInterface.h"
 #include "ItemActor.generated.h"
 
+
+
+class IInteractInterface;
+
 UCLASS()
-class KINGOFSLACKER_API AItemActor : public AActor
+class KINGOFSLACKER_API AItemActor : public AActor,public IInteractInterface
 {
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
+	
 	AItemActor();
 
+	UPROPERTY(VisibleAnywhere,meta=(AllowPrivateAccess = true))
+	TObjectPtr<UStaticMeshComponent> Mesh;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Item Actor")
+	UDataTable* ItemDataTable;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Item Actor")
+	FName ItemName;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Item Actor")
+	FItemType ItemType;
+
 protected:
-	// Called when the game starts or when spawned
+	
 	virtual void BeginPlay() override;
 
 public:	
-	// Called every frame
+	
 	virtual void Tick(float DeltaTime) override;
+
+	virtual void Interact_Implementation(bool bInRange) override;
 
 };
