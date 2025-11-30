@@ -2,7 +2,11 @@
 
 
 #include "Gameplay/StationBase.h"
+
+#include "Components/WidgetComponent.h"
+#include "Gameplay/KS_PlayerState.h"
 #include "Kismet/GameplayStatics.h"
+#include "UI/BarPercentageWidget.h"
 
 // Sets default values
 AStationBase::AStationBase()
@@ -10,34 +14,26 @@ AStationBase::AStationBase()
 
 	PrimaryActorTick.bCanEverTick = false;
 
+	ProgressBar = CreateDefaultSubobject<UWidgetComponent>(TEXT("ProgressBar"));
+	//ProgressBar ->SetupAttachment(GetRootComponent());
+
 }
 
 
 void AStationBase::BeginPlay()
 {
 	Super::BeginPlay();
+
+	ProgressBarWidget = Cast<UBarPercentageWidget>(ProgressBar->GetUserWidgetObject());
+	//check(ProgressBarWidget);
+	APlayerController*PC = GetWorld()->GetFirstPlayerController();
+	
+	if (PC)
+	{
+		KS_PlayerState = PC->GetPlayerState<AKS_PlayerState>();
+	}
 	
 }
-
-void AStationBase::ComputerStationGameplay()
-{
-	if (APlayerController*MyPC = UGameplayStatics::GetPlayerController(this,0))
-	{
-		EnableInput(MyPC);
-		InputComponent->BindAction("IA_Space",IE_Pressed,this,&AStationBase::OnSpacePressed);
-		InputComponent->BindAction("IA_Space",IE_Released,this,&AStationBase::OnSpaceReleased);
-	}
-}
-
-void AStationBase::StopComputerStationGameplay()
-{
-	bHoldingSpace = false;
-	if (APlayerController*MyPC = UGameplayStatics::GetPlayerController(this,0))
-	{
-		DisableInput(MyPC);
-	}
-}
-
 
 void AStationBase::StartTimer()
 {
@@ -50,6 +46,16 @@ void AStationBase::StartTimer()
 	);
 }
 
+void AStationBase::StartResetTimer()
+{
+	GetWorld()->GetTimerManager().SetTimer(
+		ResetTimerHandle,
+		this,
+		&AStationBase::ResetData,
+		5.f,
+		false
+		);
+}
 void AStationBase::StopTimer()
 {
 	if (TimerHandle.IsValid())
@@ -59,11 +65,46 @@ void AStationBase::StopTimer()
 
 }
 
+
+void AStationBase::StopResetTimer()
+{
+	if (ResetTimerHandle.IsValid())
+	{
+		GetWorld()->GetTimerManager().ClearTimer(ResetTimerHandle);
+	}
+}
+
+void AStationBase::StartDealyTimer()
+ {
+	GetWorld()->GetTimerManager().SetTimer(
+		DelayTimerHandle,
+		this,
+		&AStationBase::DelayData,
+		.1f,
+		true
+		);
+ }
+ 
+ void AStationBase::StopDealyTimer()
+ {
+	if (DelayTimerHandle.IsValid())
+	{
+		GetWorld()->GetTimerManager().ClearTimer(DelayTimerHandle);
+	}
+ }
+
 void AStationBase::UpdateData()
 {
 	if (bInRange)
 	{
 		BarValue = FMath::Clamp(BarValue + BarIncreaseValue*TimerInterval,0.f,BarMaxValue);
+		if (BarValue >= BarMaxValue)
+		{
+			BarValue = 0.f;
+			OnBarProgressMax.Broadcast();
+			StopTimer();
+		}
+		ProgressBarWidget->SetBarPercentage(BarValue/BarMaxValue);
 	}
 	else
 	{
@@ -71,10 +112,24 @@ void AStationBase::UpdateData()
 	}
 }
 
+void AStationBase::ResetData()
+{
+	StopTimer();
+	StartDealyTimer();
+}
+
+void AStationBase::DelayData()
+{
+	BarValue = FMath::Clamp(BarValue - BarIncreaseValue*TimerInterval,0.f,BarMaxValue);
+	ProgressBarWidget->SetBarPercentage(BarValue/BarMaxValue);
+}
+
 
 void AStationBase::OnSpacePressed()
 {
 	bHoldingSpace = true;
+	StopDealyTimer();
+	StopResetTimer();
 	StartTimer();
 	
 }
@@ -82,6 +137,7 @@ void AStationBase::OnSpacePressed()
 void AStationBase::OnSpaceReleased()
 {
 	bHoldingSpace = false;
+	StartResetTimer();
 	StopTimer();
 }
 
