@@ -95,22 +95,43 @@ void AKS_PlayerState::AddUpStrive()
 
 	OnStriveChanged.Broadcast(Strive);
 
+	EPlayerStatus PlayerStatus;
+
+
+	if (Strive >= MaxStrive)
+	{
+		PlayerStatus = EPlayerStatus::Player_MaxStrive;
+		OnStatusChanged.Broadcast(PlayerStatus);
+	}
 	
-	if (Strive==40)
+	if (Strive>80)
 	{
 		UKismetSystemLibrary::PrintString(this,TEXT("Strive is reach to the 40%"),true,false,FLinearColor::White,10.f);
+		PlayerStatus = EPlayerStatus::Player_HighPress;
+		OnStatusChanged.Broadcast(PlayerStatus);
 	}
-	else if (Strive==60)
+	else if (Strive>60)
 	{
 		UKismetSystemLibrary::PrintString(this,TEXT("Strive is reach to the 60%"),true,false,FLinearColor::White,10.f);
+		PlayerStatus = EPlayerStatus::Player_Press;
+		OnStatusChanged.Broadcast(PlayerStatus);
 	}
-	else if (Strive == 80)
+	else if (Strive > 40)
 	{
 		UKismetSystemLibrary::PrintString(this,TEXT("Strive is reach to the 80%"),true,false,FLinearColor::White,10.f);
+		PlayerStatus = EPlayerStatus::Player_LowPress;
+		OnStatusChanged.Broadcast(PlayerStatus);
 	}
-	else if (Strive >= MaxStrive)
+	else if (Strive > 20)
 	{
 		UKismetSystemLibrary::PrintString(this,TEXT("Strive is reach to the 100%"),true,false,FLinearColor::White,10.f);
+		PlayerStatus = EPlayerStatus::Player_Working;
+		OnStatusChanged.Broadcast(PlayerStatus);
+	}
+	else if (Strive > 0)
+	{
+		PlayerStatus = EPlayerStatus::Player_Fishing;
+		OnStatusChanged.Broadcast(PlayerStatus);
 	}
 }
 
@@ -118,3 +139,5 @@ void AKS_PlayerState::AddUpMaxStrive(float InCountAddup)
 {
 	MaxStrive += InCountAddup;
 }
+
+

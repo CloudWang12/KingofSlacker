@@ -12,31 +12,6 @@ class UCameraComponent;
 class UInputAction;
 struct FInputActionValue;
 
-UENUM(BlueprintType, Blueprintable) 
-enum class EPlayerState : uint8
-{
-	Player_Working,
-	Player_Fishing,
-	Player_HighPress,
-	Player_LowPress,
-	Player_Sad,
-	Player_HighComfotable,
-	Player_LowComfotable
-};
-
-UENUM(BlueprintType, Blueprintable)
-enum class ENPCState : uint8
-{
-	NPC_Working,
-	NPC_Fishing,
-	NPC_HighPress,
-	NPC_LowPress,
-	NPC_Sad,
-	NPC_HighComfotable,
-	NPC_LowComfotable
-};
-
-
 UCLASS(Abstract)
 class KINGOFSLACKER_API ACharacterBase : public ACharacterTemplate
 {

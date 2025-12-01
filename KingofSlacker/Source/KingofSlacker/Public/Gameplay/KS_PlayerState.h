@@ -13,7 +13,21 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnFishDelegate,int,InFish);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnStriveDelegate,float,InStrive);
 
 
+UENUM(BlueprintType, Blueprintable) 
+enum class EPlayerStatus : uint8
+{
+	Player_Fishing,
+	Player_Working,
+	Player_MaxStrive,
+	Player_HighPress,
+	Player_Press,
+	Player_LowPress,
+	Player_Sad,
+	Player_HighComfotable,
+	Player_LowComfotable
+};
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnStatusDelegate,EPlayerStatus,InStatus);
 /**
  * 
  */
@@ -35,6 +49,8 @@ public:
 	FOnFishDelegate OnFishChanged;
 	UPROPERTY(BlueprintAssignable, Category="KingofSlacker")
 	FOnStriveDelegate OnStriveChanged;
+	UPROPERTY(BlueprintAssignable, Category="KingofSlacker")
+	FOnStatusDelegate OnStatusChanged;
 
 	
 
@@ -122,4 +138,6 @@ public:
 
 	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
 	void AddUpMaxStrive(float InCountAddup);
+
+
 };

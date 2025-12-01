@@ -6,6 +6,19 @@
 #include "Character/CharacterTemplate.h"
 #include "CharacterNPC.generated.h"
 
+
+UENUM(BlueprintType, Blueprintable)
+enum class ENPCState : uint8
+{
+	NPC_Working,
+	NPC_Fishing,
+	NPC_HighPress,
+	NPC_LowPress,
+	NPC_Sad,
+	NPC_HighComfotable,
+	NPC_LowComfotable
+};
+
 /**
  * 
  */
