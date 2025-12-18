@@ -11,6 +11,7 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnKPIDelegate,float,InKPI);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnMoneyDelegate,int,InMoney);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnFishDelegate,int,InFish);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnStriveDelegate,float,InStrive);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnStriveMaxDelegate);
 
 
 UENUM(BlueprintType, Blueprintable) 
@@ -51,6 +52,8 @@ public:
 	FOnStriveDelegate OnStriveChanged;
 	UPROPERTY(BlueprintAssignable, Category="KingofSlacker")
 	FOnStatusDelegate OnStatusChanged;
+	UPROPERTY(BlueprintAssignable, Category="KingofSlacker")
+	FOnStriveMaxDelegate OnStriveMaxAchieved;
 
 	
 
@@ -108,6 +111,8 @@ public:
 	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Attributes | Player")
 	float MaxHealth;
 
+	
+
 
 	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
 	void AddUpFishEnergy();
@@ -119,13 +124,7 @@ public:
 	void AddUpFishEnergyEfficiency(int InCountAddup);
 
 	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
-	void ConsumeFishEnergy(int InCountConsume);
-
-	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
 	void AddupKPI();
-
-	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
-	void ConclusionKPI();
 
 	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
 	void AddUpWorkTime();
@@ -139,5 +138,32 @@ public:
 	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
 	void AddUpMaxStrive(float InCountAddup);
 
+	void AddUpIncome();
+
+	void AddUpMoney(int InMoney);
+	
+	void LowDownStrive(int InStrive);
+
+	void LowDownKPI();
+
+	void LowDownWorkTime();
+
+	void LowDownWorkEfficiency();
+
+	void LowDownInCome();
+
+	void ConsumeMoney(int InMoney);
+	
+
+	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
+	void ConsumeFishEnergy(int InCountConsume);
+
+	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
+	void ConclusionKPI();
+
+	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
+	void RestartStrive();
+
+	void EffectFishEfficiency(float InStrive);
 
 };
