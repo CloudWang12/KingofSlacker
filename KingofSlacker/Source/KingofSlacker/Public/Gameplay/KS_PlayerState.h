@@ -124,7 +124,7 @@ public:
 	void AddUpFishEnergyEfficiency(int InCountAddup);
 
 	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
-	void AddupKPI();
+	void AddUpKPI();
 
 	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
 	void AddUpWorkTime();
@@ -138,10 +138,9 @@ public:
 	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
 	void AddUpMaxStrive(float InCountAddup);
 
-	void AddUpIncome();
-
 	void AddUpMoney(int InMoney);
 	
+	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
 	void LowDownStrive(int InStrive);
 
 	void LowDownKPI();
@@ -163,7 +162,7 @@ public:
 
 	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
 	void RestartStrive();
-
+	
 	void EffectFishEfficiency(float InStrive);
 
 };

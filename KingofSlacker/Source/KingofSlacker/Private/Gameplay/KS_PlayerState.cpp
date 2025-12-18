@@ -65,7 +65,7 @@ void AKS_PlayerState::ConsumeFishEnergy(int InCountConsume)
 	Fish_Energy = FMath::Clamp(Fish_Energy,0,MaxFish_Energy);
 }
 
-void AKS_PlayerState::AddupKPI()
+void AKS_PlayerState::AddUpKPI()
 {
 	KPI += KPICount;
 	KPI = FMath::Clamp(KPI,0,MaxKPI);
@@ -84,6 +84,9 @@ void AKS_PlayerState::ConclusionKPI()
 	{
 		KPICount++;
 	}
+	float KPIPercentage = KPI/MaxKPI;
+	AddUpMoney(Income*KPIPercentage);
+	
 	KPI = 0;
 }
 
@@ -94,9 +97,13 @@ void AKS_PlayerState::RestartStrive()
 
 void AKS_PlayerState::EffectFishEfficiency(float InStrive)
 {
+	EPlayerStatus PlayerStatus;
 	if (InStrive >= MaxStrive)
 	{
 		Fish_EnergyEfficiency = FMath::Clamp(.0f,0.f,1.f);
+		PlayerStatus = EPlayerStatus::Player_MaxStrive;
+		OnStatusChanged.Broadcast(PlayerStatus);
+		OnStriveMaxAchieved.Broadcast();
 	}
 	else if (InStrive == MaxStrive*0.9f)
 	{
@@ -105,6 +112,9 @@ void AKS_PlayerState::EffectFishEfficiency(float InStrive)
 	else if (InStrive == MaxStrive*.8f)
 	{
 		Fish_EnergyEfficiency = FMath::Clamp(.2f,0.f,1.f);
+		UKismetSystemLibrary::PrintString(this,TEXT("Strive is reach to the 80%"),true,false,FLinearColor::White,10.f);
+		PlayerStatus = EPlayerStatus::Player_HighPress;
+		OnStatusChanged.Broadcast(PlayerStatus);
 	}
 	else if (InStrive == MaxStrive*.7f)
 	{
@@ -113,6 +123,9 @@ void AKS_PlayerState::EffectFishEfficiency(float InStrive)
 	else if (InStrive == MaxStrive*.6f)
 	{
 		Fish_EnergyEfficiency = FMath::Clamp(.4f,0.f,1.f);
+		UKismetSystemLibrary::PrintString(this,TEXT("Strive is reach to the 60%"),true,false,FLinearColor::White,10.f);
+		PlayerStatus = EPlayerStatus::Player_Press;
+		OnStatusChanged.Broadcast(PlayerStatus);
 	}
 	else if (InStrive == MaxStrive*.5f)
 	{
@@ -121,6 +134,9 @@ void AKS_PlayerState::EffectFishEfficiency(float InStrive)
 	else if (InStrive == MaxStrive*.4f)
 	{
 		Fish_EnergyEfficiency = FMath::Clamp(.6f,0.f,1.f);
+		UKismetSystemLibrary::PrintString(this,TEXT("Strive is reach to the 40%"),true,false,FLinearColor::White,10.f);
+		PlayerStatus = EPlayerStatus::Player_LowPress;
+		OnStatusChanged.Broadcast(PlayerStatus);
 	}
 	else if (InStrive == MaxStrive*.3f)
 	{
@@ -129,6 +145,9 @@ void AKS_PlayerState::EffectFishEfficiency(float InStrive)
 	else if (InStrive == MaxStrive*.2f)
 	{
 		Fish_EnergyEfficiency = FMath::Clamp(.8f,0.f,1.f);
+		UKismetSystemLibrary::PrintString(this,TEXT("Strive is reach to the 20%"),true,false,FLinearColor::White,10.f);
+		PlayerStatus = EPlayerStatus::Player_Working;
+		OnStatusChanged.Broadcast(PlayerStatus);
 	}
 	else if (InStrive == MaxStrive*.1f)
 	{
@@ -137,6 +156,8 @@ void AKS_PlayerState::EffectFishEfficiency(float InStrive)
 	else if (InStrive == MaxStrive*.0f)
 	{
 		Fish_EnergyEfficiency = FMath::Clamp(1.f,0.f,1.f);
+		PlayerStatus = EPlayerStatus::Player_Fishing;
+		OnStatusChanged.Broadcast(PlayerStatus);
 	}
 }
 
@@ -156,53 +177,15 @@ void AKS_PlayerState::AddUpStrive()
 	Strive = FMath::Clamp(Strive,0,MaxStrive);
 
 	OnStriveChanged.Broadcast(Strive);
-
-	EPlayerStatus PlayerStatus;
-
-	EffectFishEfficiency(Strive);
-
-	if (Strive >= MaxStrive)
-	{
-		PlayerStatus = EPlayerStatus::Player_MaxStrive;
-		OnStatusChanged.Broadcast(PlayerStatus);
-		OnStriveMaxAchieved.Broadcast();
-	}
 	
-	if (Strive==80.f)
-	{
-		UKismetSystemLibrary::PrintString(this,TEXT("Strive is reach to the 80%"),true,false,FLinearColor::White,10.f);
-		PlayerStatus = EPlayerStatus::Player_HighPress;
-		OnStatusChanged.Broadcast(PlayerStatus);
-	}
-	else if (Strive==60.f)
-	{
-		UKismetSystemLibrary::PrintString(this,TEXT("Strive is reach to the 60%"),true,false,FLinearColor::White,10.f);
-		PlayerStatus = EPlayerStatus::Player_Press;
-		OnStatusChanged.Broadcast(PlayerStatus);
-	}
-	else if (Strive == 40.f)
-	{
-		UKismetSystemLibrary::PrintString(this,TEXT("Strive is reach to the 40%"),true,false,FLinearColor::White,10.f);
-		PlayerStatus = EPlayerStatus::Player_LowPress;
-		OnStatusChanged.Broadcast(PlayerStatus);
-	}
-	else if (Strive == 20.f)
-	{
-		UKismetSystemLibrary::PrintString(this,TEXT("Strive is reach to the 20%"),true,false,FLinearColor::White,10.f);
-		PlayerStatus = EPlayerStatus::Player_Working;
-		OnStatusChanged.Broadcast(PlayerStatus);
-	}
-	else if (Strive == 0.f)
-	{
-		PlayerStatus = EPlayerStatus::Player_Fishing;
-		OnStatusChanged.Broadcast(PlayerStatus);
-	}
+	EffectFishEfficiency(Strive);
 }
 
 void AKS_PlayerState::AddUpMaxStrive(float InCountAddup)
 {
 	MaxStrive += InCountAddup;
 }
+
 
 void AKS_PlayerState::AddUpMoney(int InMoney)
 {
@@ -212,6 +195,9 @@ void AKS_PlayerState::AddUpMoney(int InMoney)
 void AKS_PlayerState::LowDownStrive(int InStrive)
 {
 	Strive -= InStrive;
+	OnStriveChanged.Broadcast(Strive);
+	EffectFishEfficiency(Strive);
+	
 }
 
 
