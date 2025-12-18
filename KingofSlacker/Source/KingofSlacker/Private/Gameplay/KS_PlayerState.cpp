@@ -2,11 +2,13 @@
 
 
 #include "Gameplay/KS_PlayerState.h"
-
+#include "Inventory/InventoryComponent.h"
 #include "Kismet/KismetSystemLibrary.h"
 
 AKS_PlayerState::AKS_PlayerState()
 {
+	InventoryComponent = CreateDefaultSubobject<UInventoryComponent>("InventoryComponent");
+	
 	Money = 888;
 	Income = 150;
 	KPI = 3.f;
@@ -160,6 +162,8 @@ void AKS_PlayerState::EffectFishEfficiency(float InStrive)
 		OnStatusChanged.Broadcast(PlayerStatus);
 	}
 }
+
+
 
 void AKS_PlayerState::AddUpWorkTime()
 {

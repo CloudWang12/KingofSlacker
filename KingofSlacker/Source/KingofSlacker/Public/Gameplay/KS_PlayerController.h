@@ -21,8 +21,7 @@ class KINGOFSLACKER_API AKS_PlayerController : public APlayerController
 public:
 	AKS_PlayerController();
 	
-	UPROPERTY(EditAnywhere, Category="AKS | Component | Dialogue")
-	TObjectPtr<UInventoryComponent>InventoryComponent;
+
 
 	UPROPERTY(EditAnywhere, Category="AKS | Component | Dialogue")
 	TObjectPtr<UDialogueComponent>DialogueComponent;

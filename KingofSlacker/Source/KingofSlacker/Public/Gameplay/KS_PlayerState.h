@@ -4,14 +4,17 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/PlayerState.h"
+#include "Inventory/ItemType.h"
 #include "KS_PlayerState.generated.h"
 
 
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnKPIDelegate,float,InKPI);
+class UInventoryComponent;
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnKPIDelegate, float, InKPI);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnMoneyDelegate,int,InMoney);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnFishDelegate,int,InFish);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnStriveDelegate,float,InStrive);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnStriveMaxDelegate);
+
 
 
 UENUM(BlueprintType, Blueprintable) 
@@ -41,6 +44,9 @@ public:
 
 	AKS_PlayerState();
 
+	UPROPERTY(EditAnywhere,BlueprintReadWrite ,Category="AKS | Component | Inventrory")
+	TObjectPtr<UInventoryComponent>InventoryComponent;
+
 
 	UPROPERTY(BlueprintAssignable, Category="KingofSlacker")
 	FOnKPIDelegate OnKPIChanged;
@@ -54,6 +60,7 @@ public:
 	FOnStatusDelegate OnStatusChanged;
 	UPROPERTY(BlueprintAssignable, Category="KingofSlacker")
 	FOnStriveMaxDelegate OnStriveMaxAchieved;
+	
 
 	
 
@@ -164,5 +171,8 @@ public:
 	void RestartStrive();
 	
 	void EffectFishEfficiency(float InStrive);
+
+
+
 
 };
