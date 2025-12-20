@@ -66,13 +66,13 @@ void UTaskComponent::TimeManager()
 	if (day > Max_day)
 	{
 		month++;
-		OnMonthChanged.Broadcast(month);
-		if (month ==1)
+		if (month>=12)
 		{
-			year++;
 			month = 1;
+			year++;
 			OnYearChanged.Broadcast(year);
 		}
+		OnMonthChanged.Broadcast(month);
 		day = 1 ;
 	}
 

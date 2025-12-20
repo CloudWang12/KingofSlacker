@@ -5,12 +5,11 @@
 #include "EnhancedInputSubsystems.h"
 #include "Dialogue/DialogueComponent.h"
 #include "Gameplay/KS_PlayerState.h"
-#include "Inventory/InventoryComponent.h"
+
 #include "Kismet/KismetSystemLibrary.h"
 
 AKS_PlayerController::AKS_PlayerController()
 {
-	InventoryComponent = CreateDefaultSubobject<UInventoryComponent>("InventoryComponent");
 
 	DialogueComponent = CreateDefaultSubobject<UDialogueComponent>("DialogueComponent");
 

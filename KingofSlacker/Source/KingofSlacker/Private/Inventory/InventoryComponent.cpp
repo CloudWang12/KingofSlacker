@@ -18,8 +18,6 @@ UInventoryComponent::UInventoryComponent()
 void UInventoryComponent::BeginPlay()
 {
 	Super::BeginPlay();
-
-	// ...
 	
 }
 
@@ -30,5 +28,23 @@ void UInventoryComponent::TickComponent(float DeltaTime, ELevelTick TickType, FA
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 
 	// ...
+}
+
+FItemType UInventoryComponent::GetItemData(FName ItemName)
+{
+	if (ItemDataTable)
+	{
+		ItemType = *ItemDataTable->FindRow<FItemType>(ItemName,"Context");
+		return ItemType;
+	}
+	return FItemType();
+}
+
+void UInventoryComponent::AddItem(FName ItemName)
+{
+	
+	ItemEntries.Add(GetItemData(ItemName));
+	OnItemChanged.Broadcast(GetItemData(ItemName));
+
 }
 

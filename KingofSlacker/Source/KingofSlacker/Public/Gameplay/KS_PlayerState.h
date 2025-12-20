@@ -4,13 +4,17 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/PlayerState.h"
+#include "Inventory/ItemType.h"
 #include "KS_PlayerState.generated.h"
 
 
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnKPIDelegate,float,InKPI);
+class UInventoryComponent;
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnKPIDelegate, float, InKPI);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnMoneyDelegate,int,InMoney);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnFishDelegate,int,InFish);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnStriveDelegate,float,InStrive);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnStriveMaxDelegate);
+
 
 
 UENUM(BlueprintType, Blueprintable) 
@@ -40,6 +44,9 @@ public:
 
 	AKS_PlayerState();
 
+	UPROPERTY(EditAnywhere,BlueprintReadWrite ,Category="AKS | Component | Inventrory")
+	TObjectPtr<UInventoryComponent>InventoryComponent;
+
 
 	UPROPERTY(BlueprintAssignable, Category="KingofSlacker")
 	FOnKPIDelegate OnKPIChanged;
@@ -51,6 +58,9 @@ public:
 	FOnStriveDelegate OnStriveChanged;
 	UPROPERTY(BlueprintAssignable, Category="KingofSlacker")
 	FOnStatusDelegate OnStatusChanged;
+	UPROPERTY(BlueprintAssignable, Category="KingofSlacker")
+	FOnStriveMaxDelegate OnStriveMaxAchieved;
+	
 
 	
 
@@ -62,6 +72,9 @@ public:
 
 	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Attributes | Global")
 	float KPI;
+
+	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Attributes | Global")
+	int KPITimes;
 
 	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Attributes | Global")
 	float KPICount;
@@ -108,6 +121,8 @@ public:
 	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Attributes | Player")
 	float MaxHealth;
 
+	
+
 
 	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
 	void AddUpFishEnergy();
@@ -116,16 +131,13 @@ public:
 	void AddUpMaxFishEnergy(int InCountAddup);
 
 	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
-	void AddUpFishEnergyEfficiency(int InCountAddup);
+	void AddUpFishEnergyEfficiency(float InCountAddup);
 
 	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
-	void ConsumeFishEnergy(int InCountConsume);
+	void AddUpKPI();
 
 	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
-	void AddupKPI();
-
-	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
-	void ConclusionKPI();
+	void AddUpKPICount(int InCount);
 
 	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
 	void AddUpWorkTime();
@@ -138,6 +150,37 @@ public:
 
 	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
 	void AddUpMaxStrive(float InCountAddup);
+
+	void AddUpMoney(int InMoney);
+	
+	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
+	void LowDownStrive(int InStrive);
+
+	void LowDownKPI();
+
+	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
+	void LowDownWorkTime(float InWorkTime);
+
+	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
+	void LowDownFishTime(float InFishTime);
+
+	void LowDownInCome();
+
+	void ConsumeMoney(int InMoney);
+	
+
+	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
+	void ConsumeFishEnergy(int InCountConsume);
+
+	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
+	void ConclusionKPI();
+
+	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
+	void RestartStrive();
+	
+	void EffectFishEfficiency(float InStrive);
+
+
 
 
 };

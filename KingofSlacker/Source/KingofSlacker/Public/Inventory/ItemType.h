@@ -5,11 +5,26 @@
 #include "CoreMinimal.h"
 #include "ItemType.generated.h"
 
+UENUM(BlueprintType,Blueprintable)
+enum class EItemCategory :uint8
+{
+	Consumable,
+	Equipable
+};
+
+
+
 USTRUCT(BlueprintType)
 struct FItemType : public FTableRowBase
 {
 	GENERATED_BODY()
 
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "ItemDefinition")	
+	int ItemID = 0;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "ItemDefinition")
+	bool bStackable = false;
+	
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "ItemDefinition")
 	FText ItemName = FText();
 
@@ -25,7 +40,6 @@ struct FItemType : public FTableRowBase
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "ItemDefinition")
 	TSoftObjectPtr<UTexture2D> ItemTexture = nullptr;
 
-	
-	
-	
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "ItemDefinition")
+	EItemCategory ItemCategory = EItemCategory::Equipable;
 };
