@@ -28,7 +28,7 @@ public:
 	UBarPercentageWidget*ProgressBarWidget;
 
 	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite, Category="Station")
-	AKS_PlayerState * KS_PlayerState;
+	mutable AKS_PlayerState * KS_PlayerState;
 
 	UPROPERTY(BlueprintAssignable, Category="Station")
 	FOnBarProgressMax OnBarProgressMax;
@@ -44,6 +44,8 @@ public:
 	float BarMaxValue = 1.f;
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Station")
 	float BarIncreaseValue = 0.2f;
+	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite, Category = "Station")
+	float EffectTimes = 1.f;
 
 	FTimerHandle TimerHandle;
 
@@ -58,7 +60,10 @@ protected:
 	
 	virtual void BeginPlay() override;
 
-public:	
+public:
+
+	UFUNCTION(BlueprintCallable, Category = "Station")
+	AKS_PlayerState * GetKSPlayerState()const ;
 
 	void StartTimer();
 	void StopTimer();

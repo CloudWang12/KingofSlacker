@@ -26,13 +26,22 @@ void AStationBase::BeginPlay()
 
 	ProgressBarWidget = Cast<UBarPercentageWidget>(ProgressBar->GetUserWidgetObject());
 	//check(ProgressBarWidget);
+	
+}
+
+AKS_PlayerState* AStationBase::GetKSPlayerState() const
+{
 	APlayerController*PC = GetWorld()->GetFirstPlayerController();
 	
 	if (PC)
 	{
 		KS_PlayerState = PC->GetPlayerState<AKS_PlayerState>();
+		return KS_PlayerState;
 	}
-	
+	else
+	{
+		return nullptr;
+	}
 }
 
 void AStationBase::StartTimer()
@@ -97,7 +106,7 @@ void AStationBase::UpdateData()
 {
 	if (bInRange)
 	{
-		BarValue = FMath::Clamp(BarValue + BarIncreaseValue*TimerInterval,0.f,BarMaxValue);
+		BarValue = FMath::Clamp(BarValue + BarIncreaseValue*TimerInterval*EffectTimes,0.f,BarMaxValue);
 		if (BarValue >= BarMaxValue)
 		{
 			BarValue = 0.f;

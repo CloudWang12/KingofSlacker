@@ -74,6 +74,9 @@ public:
 	float KPI;
 
 	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Attributes | Global")
+	int KPITimes;
+
+	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Attributes | Global")
 	float KPICount;
 
 	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Attributes | Global")
@@ -128,10 +131,13 @@ public:
 	void AddUpMaxFishEnergy(int InCountAddup);
 
 	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
-	void AddUpFishEnergyEfficiency(int InCountAddup);
+	void AddUpFishEnergyEfficiency(float InCountAddup);
 
 	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
 	void AddUpKPI();
+
+	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
+	void AddUpKPICount(int InCount);
 
 	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
 	void AddUpWorkTime();
@@ -152,9 +158,11 @@ public:
 
 	void LowDownKPI();
 
-	void LowDownWorkTime();
+	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
+	void LowDownWorkTime(float InWorkTime);
 
-	void LowDownWorkEfficiency();
+	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
+	void LowDownFishTime(float InFishTime);
 
 	void LowDownInCome();
 
