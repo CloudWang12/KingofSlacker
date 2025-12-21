@@ -28,7 +28,10 @@ enum class EPlayerStatus : uint8
 	Player_LowPress,
 	Player_Sad,
 	Player_HighComfotable,
-	Player_LowComfotable
+	Player_LowComfotable,
+	Station_Idle,
+	Station_Working,
+	Station_Fishing
 };
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnStatusDelegate,EPlayerStatus,InStatus);
@@ -179,6 +182,9 @@ public:
 	void RestartStrive();
 	
 	void EffectFishEfficiency(float InStrive);
+
+	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
+	void SwitchStatus(EPlayerStatus InStatus);
 
 
 

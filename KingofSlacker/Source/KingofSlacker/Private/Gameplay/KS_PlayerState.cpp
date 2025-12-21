@@ -168,6 +168,13 @@ void AKS_PlayerState::EffectFishEfficiency(float InStrive)
 	}
 }
 
+void AKS_PlayerState::SwitchStatus(EPlayerStatus InStatus)
+{
+	if (InStatus == EPlayerStatus::Station_Idle || InStatus==EPlayerStatus::Station_Fishing || InStatus == EPlayerStatus::Station_Working)
+	{
+		OnStatusChanged.Broadcast(InStatus);
+	}
+}
 
 
 void AKS_PlayerState::AddUpWorkTime()
