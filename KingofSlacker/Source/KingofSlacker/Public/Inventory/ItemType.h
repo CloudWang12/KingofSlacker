@@ -9,7 +9,8 @@ UENUM(BlueprintType,Blueprintable)
 enum class EItemCategory :uint8
 {
 	Consumable,
-	Equipable
+	Equipable,
+	Misc
 };
 
 

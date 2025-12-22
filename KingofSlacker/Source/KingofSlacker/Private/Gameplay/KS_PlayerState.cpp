@@ -176,6 +176,15 @@ void AKS_PlayerState::SwitchStatus(EPlayerStatus InStatus)
 	}
 }
 
+void AKS_PlayerState::LoadAllAttributes(int InMoney, float InKPI,int InFishEnergy,float InStrive)
+{
+	OnMoneyChanged.Broadcast(InMoney);
+	OnKPIChanged.Broadcast(InKPI);
+	OnFishChanged.Broadcast(InFishEnergy);
+	OnStriveChanged.Broadcast(MaxStrive);
+	
+}
+
 
 void AKS_PlayerState::AddUpWorkTime()
 {
@@ -185,6 +194,7 @@ void AKS_PlayerState::AddUpWorkTime()
 void AKS_PlayerState::AddUpWorkEfficiency(int ItemCount)
 {
 	Work_Efficiency *= ItemCount;
+	//Work_Efficiency=FMath::Clamp(Work_Efficiency,0.f,1.f);
 }
 
 void AKS_PlayerState::AddUpStrive()
@@ -210,7 +220,7 @@ void AKS_PlayerState::AddUpMoney(int InMoney)
 
 void AKS_PlayerState::LowDownStrive(int InStrive)
 {
-	Strive -= InStrive;
+	Strive = FMath::Clamp(Strive -= InStrive,0,MaxStrive);
 	OnStriveChanged.Broadcast(Strive);
 	EffectFishEfficiency(Strive);
 	

@@ -45,5 +45,8 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Inventory")
 	void AddItem(FName ItemName);
 
+	UFUNCTION(BlueprintCallable,category="Inventory")
+	void LoadItem(TArray<FItemType>ItemsArray);
+	
 		
 };

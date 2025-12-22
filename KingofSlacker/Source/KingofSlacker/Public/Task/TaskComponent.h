@@ -88,6 +88,9 @@ public:
 
 	void TimeManager();
 
+	UFUNCTION(BlueprintCallable)
+	void LoadTaskData(int InYear,int InMonth,int InDay);
+
 
 	
 

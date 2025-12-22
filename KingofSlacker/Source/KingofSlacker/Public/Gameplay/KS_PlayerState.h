@@ -186,7 +186,8 @@ public:
 	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
 	void SwitchStatus(EPlayerStatus InStatus);
 
-
+	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
+	void LoadAllAttributes(int InMoney, float InKPI,int InFishEnergy,float InStrive);
 
 
 };
