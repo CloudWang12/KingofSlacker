@@ -48,3 +48,11 @@ void UInventoryComponent::AddItem(FName ItemName)
 
 }
 
+void UInventoryComponent::LoadItem(TArray<FItemType> ItemsArray)
+{
+	for (auto& Item : ItemsArray)
+	{
+		OnItemChanged.Broadcast(Item);
+	}
+}
+

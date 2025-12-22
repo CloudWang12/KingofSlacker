@@ -79,6 +79,13 @@ void UTaskComponent::TimeManager()
 	OnDayChanged.Broadcast(day);
 }
 
+void UTaskComponent::LoadTaskData(int InYear, int InMonth, int InDay)
+{
+	OnYearChanged.Broadcast(InYear);
+	OnMonthChanged.Broadcast(InMonth);
+	OnDayChanged.Broadcast(InDay);
+}
+
 void UTaskComponent::BeginPlay()
 {
 	Super::BeginPlay();

@@ -176,6 +176,15 @@ void AKS_PlayerState::SwitchStatus(EPlayerStatus InStatus)
 	}
 }
 
+void AKS_PlayerState::LoadAllAttributes(int InMoney, float InKPI,int InFishEnergy,float InStrive)
+{
+	OnMoneyChanged.Broadcast(InMoney);
+	OnKPIChanged.Broadcast(InKPI);
+	OnFishChanged.Broadcast(InFishEnergy);
+	OnStriveChanged.Broadcast(MaxStrive);
+	
+}
+
 
 void AKS_PlayerState::AddUpWorkTime()
 {
