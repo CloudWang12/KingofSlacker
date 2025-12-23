@@ -66,7 +66,7 @@ void UTaskComponent::TimeManager()
 	if (day > Max_day)
 	{
 		month++;
-		if (month>=12)
+		if (month>12)
 		{
 			month = 1;
 			year++;
