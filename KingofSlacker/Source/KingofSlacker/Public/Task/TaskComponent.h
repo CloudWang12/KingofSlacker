@@ -27,7 +27,6 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnMonthDelegate,int,Month);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnYearDelegate,int,Year);
 
 
-
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class KINGOFSLACKER_API UTaskComponent : public UActorComponent
 {
