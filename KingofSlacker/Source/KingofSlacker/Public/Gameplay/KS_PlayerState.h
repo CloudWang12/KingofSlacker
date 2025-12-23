@@ -22,6 +22,7 @@ enum class EPlayerStatus : uint8
 {
 	Player_Fishing,
 	Player_Working,
+	Player_Throwing,
 	Player_MaxStrive,
 	Player_HighPress,
 	Player_Press,
@@ -31,7 +32,8 @@ enum class EPlayerStatus : uint8
 	Player_LowComfotable,
 	Station_Idle,
 	Station_Working,
-	Station_Fishing
+	Station_Fishing,
+	Station_Throwing
 };
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnStatusDelegate,EPlayerStatus,InStatus);
