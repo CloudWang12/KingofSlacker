@@ -39,8 +39,14 @@ struct FItemType : public FTableRowBase
 	TSoftObjectPtr<UStaticMesh> ItemMesh = nullptr;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "ItemDefinition")
-	TSoftObjectPtr<UTexture2D> ItemTexture = nullptr;
+	TObjectPtr<UTexture2D> ItemTexture = nullptr;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "ItemDefinition")
+	TObjectPtr<UTexture2D> ItemType = nullptr;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "ItemDefinition")
 	EItemCategory ItemCategory = EItemCategory::Equipable;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "ItemDefinition")
+	int ValueOfItems = 0;
 };
