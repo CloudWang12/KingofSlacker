@@ -60,9 +60,6 @@ void UTaskComponent::TimeManager()
 	{
 		Max_day = 31;
 	}
-	
-	//int Local_day = FMath::Clamp(day,1,Max_day);
-
 	if (day > Max_day)
 	{
 		month++;
