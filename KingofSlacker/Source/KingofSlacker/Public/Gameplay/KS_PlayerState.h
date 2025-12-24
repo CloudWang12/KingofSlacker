@@ -178,7 +178,7 @@ public:
 	void ConsumeFishEnergy(int InCountConsume);
 
 	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
-	void ConclusionKPI();
+	int ConclusionKPI();
 
 	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
 	void RestartStrive();

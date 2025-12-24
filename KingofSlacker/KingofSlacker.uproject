@@ -23,8 +23,16 @@
 			]
 		},
 		{
-			"Name": "CommonUI",
+			"Name": "DatasmithImporter",
 			"Enabled": true
 		},
-			]
+		{
+			"Name": "DatasmithFBXImporter",
+			"Enabled": true
+		},
+		{
+			"Name": "CommonUI",
+			"Enabled": true
+		}
+	]
 }

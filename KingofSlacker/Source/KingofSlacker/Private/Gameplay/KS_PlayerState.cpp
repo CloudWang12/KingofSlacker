@@ -85,7 +85,7 @@ void AKS_PlayerState::AddUpKPICount(int InCount)
 	KPICount += InCount;
 }
 
-void AKS_PlayerState::ConclusionKPI()
+int AKS_PlayerState::ConclusionKPI()
 {
 	if (KPI >= MaxKPI)
 	{
@@ -95,6 +95,7 @@ void AKS_PlayerState::ConclusionKPI()
 	AddUpMoney(Income*KPIPercentage);
 	
 	KPI = 0;
+	return Income*KPIPercentage;
 }
 
 void AKS_PlayerState::RestartStrive()
