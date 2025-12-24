@@ -20,6 +20,11 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnStriveMaxDelegate);
 UENUM(BlueprintType, Blueprintable) 
 enum class EPlayerStatus : uint8
 {
+	None,
+	Station_Idle,
+	Station_Working,
+	Station_Fishing,
+	Station_Throwing,
 	Player_Fishing,
 	Player_Working,
 	Player_Throwing,
@@ -29,11 +34,7 @@ enum class EPlayerStatus : uint8
 	Player_LowPress,
 	Player_Sad,
 	Player_HighComfotable,
-	Player_LowComfotable,
-	Station_Idle,
-	Station_Working,
-	Station_Fishing,
-	Station_Throwing
+	Player_LowComfotable
 };
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnStatusDelegate,EPlayerStatus,InStatus);

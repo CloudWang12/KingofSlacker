@@ -105,12 +105,12 @@ void AKS_PlayerState::RestartStrive()
 
 void AKS_PlayerState::EffectFishEfficiency(float InStrive)
 {
-	EPlayerStatus PlayerStatus;
+	//EPlayerStatus PlayerStatus;
 	if (InStrive >= MaxStrive)
 	{
 		Fish_EnergyEfficiency = FMath::Clamp(.0f,0.f,1.f);
-		PlayerStatus = EPlayerStatus::Player_MaxStrive;
-		OnStatusChanged.Broadcast(PlayerStatus);
+		//PlayerStatus = EPlayerStatus::Player_MaxStrive;
+		//OnStatusChanged.Broadcast(PlayerStatus);
 		OnStriveMaxAchieved.Broadcast();
 	}
 	else if (InStrive == MaxStrive*0.9f)
@@ -121,8 +121,8 @@ void AKS_PlayerState::EffectFishEfficiency(float InStrive)
 	{
 		Fish_EnergyEfficiency = FMath::Clamp(.2f*Fish_EnergyEfficiency,0.f,1.f);
 		UKismetSystemLibrary::PrintString(this,TEXT("Strive is reach to the 80%"),true,false,FLinearColor::White,10.f);
-		PlayerStatus = EPlayerStatus::Player_HighPress;
-		OnStatusChanged.Broadcast(PlayerStatus);
+		//PlayerStatus = EPlayerStatus::Player_HighPress;
+		//OnStatusChanged.Broadcast(PlayerStatus);
 	}
 	else if (InStrive == MaxStrive*.7f)
 	{
@@ -132,8 +132,8 @@ void AKS_PlayerState::EffectFishEfficiency(float InStrive)
 	{
 		Fish_EnergyEfficiency = FMath::Clamp(.4f*Fish_EnergyEfficiency,0.f,1.f);
 		UKismetSystemLibrary::PrintString(this,TEXT("Strive is reach to the 60%"),true,false,FLinearColor::White,10.f);
-		PlayerStatus = EPlayerStatus::Player_Press;
-		OnStatusChanged.Broadcast(PlayerStatus);
+		//PlayerStatus = EPlayerStatus::Player_Press;
+		//OnStatusChanged.Broadcast(PlayerStatus);
 	}
 	else if (InStrive == MaxStrive*.5f)
 	{
@@ -143,8 +143,8 @@ void AKS_PlayerState::EffectFishEfficiency(float InStrive)
 	{
 		Fish_EnergyEfficiency = FMath::Clamp(.6f*Fish_EnergyEfficiency,0.f,1.f);
 		UKismetSystemLibrary::PrintString(this,TEXT("Strive is reach to the 40%"),true,false,FLinearColor::White,10.f);
-		PlayerStatus = EPlayerStatus::Player_LowPress;
-		OnStatusChanged.Broadcast(PlayerStatus);
+		//PlayerStatus = EPlayerStatus::Player_LowPress;
+		//OnStatusChanged.Broadcast(PlayerStatus);
 	}
 	else if (InStrive == MaxStrive*.3f)
 	{
@@ -154,8 +154,8 @@ void AKS_PlayerState::EffectFishEfficiency(float InStrive)
 	{
 		Fish_EnergyEfficiency = FMath::Clamp(.8f*Fish_EnergyEfficiency,0.f,1.f);
 		UKismetSystemLibrary::PrintString(this,TEXT("Strive is reach to the 20%"),true,false,FLinearColor::White,10.f);
-		PlayerStatus = EPlayerStatus::Player_Working;
-		OnStatusChanged.Broadcast(PlayerStatus);
+		//PlayerStatus = EPlayerStatus::Player_Working;
+		//OnStatusChanged.Broadcast(PlayerStatus);
 	}
 	else if (InStrive == MaxStrive*.1f)
 	{
@@ -164,8 +164,8 @@ void AKS_PlayerState::EffectFishEfficiency(float InStrive)
 	else if (InStrive == MaxStrive*.0f)
 	{
 		Fish_EnergyEfficiency = FMath::Clamp(1.f*Fish_EnergyEfficiency,0.f,1.f);
-		PlayerStatus = EPlayerStatus::Player_Fishing;
-		OnStatusChanged.Broadcast(PlayerStatus);
+		//PlayerStatus = EPlayerStatus::Player_Fishing;
+		//OnStatusChanged.Broadcast(PlayerStatus);
 	}
 }
 
