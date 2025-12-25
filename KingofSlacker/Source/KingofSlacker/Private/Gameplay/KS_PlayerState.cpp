@@ -56,9 +56,31 @@ void AKS_PlayerState::AddUpFishEnergyEfficiency(float InCountAddup)
 	Fish_EnergyEfficiency *= InCountAddup;
 }
 
-void AKS_PlayerState::ConsumeMoney(int InMoney)
+
+
+void AKS_PlayerState::PurchaseItems(EItemCategory ItemCategory, int InConsumeAccount)
 {
-	Money -= InMoney;
+	if (ItemCategory==EItemCategory::Consumable)
+	{
+		LowDownMoney(InConsumeAccount);
+	}
+	else if (ItemCategory==EItemCategory::Equipable)
+	{
+		LowDownFishEnergy(InConsumeAccount);
+	}
+}
+
+bool AKS_PlayerState::CheckEnoughToken(EItemCategory ItemCategory, int InConsumeAccount)
+{
+	if (ItemCategory==EItemCategory::Consumable && Money >= InConsumeAccount)
+	{
+		return true;
+	}
+	else if (ItemCategory==EItemCategory::Equipable && Fish_Energy >= InConsumeAccount)
+	{
+		return true;
+	}
+	return false;
 }
 
 void AKS_PlayerState::ConsumeFishEnergy(int InCountConsume)
@@ -219,6 +241,18 @@ void AKS_PlayerState::AddUpMoney(int InMoney)
 {
 	Money += InMoney;
 	OnMoneyChanged.Broadcast(Money);
+}
+
+void AKS_PlayerState::LowDownMoney(int InMoney)
+{
+	Money -= InMoney;
+	OnMoneyChanged.Broadcast(Money);
+}
+
+void AKS_PlayerState::LowDownFishEnergy(float InCountFishEnergy)
+{
+	Fish_Energy-=InCountFishEnergy;
+	OnFishChanged.Broadcast(Fish_Energy);
 }
 
 void AKS_PlayerState::LowDownStrive(int InStrive)
