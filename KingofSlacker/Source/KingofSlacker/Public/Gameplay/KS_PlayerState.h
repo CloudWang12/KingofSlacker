@@ -157,6 +157,7 @@ public:
 	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
 	void AddUpMaxStrive(float InCountAddup);
 
+	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
 	void AddUpMoney(int InMoney);
 	
 	UFUNCTION(BlueprintCallable,Category="Attributes | Function")

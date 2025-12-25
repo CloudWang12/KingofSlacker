@@ -217,6 +217,7 @@ void AKS_PlayerState::AddUpMaxStrive(float InCountAddup)
 void AKS_PlayerState::AddUpMoney(int InMoney)
 {
 	Money += InMoney;
+	OnMoneyChanged.Broadcast(Money);
 }
 
 void AKS_PlayerState::LowDownStrive(int InStrive)
