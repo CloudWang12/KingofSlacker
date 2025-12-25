@@ -95,6 +95,7 @@ int AKS_PlayerState::ConclusionKPI()
 	AddUpMoney(Income*KPIPercentage);
 	
 	KPI = 0;
+	OnKPIChanged.Broadcast(KPI);
 	return Income*KPIPercentage;
 }
 
