@@ -159,6 +159,12 @@ public:
 
 	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
 	void AddUpMoney(int InMoney);
+
+	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
+	void LowDownMoney(int InMoney);
+
+	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
+	void LowDownFishEnergy(float InCountFishEnergy);
 	
 	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
 	void LowDownStrive(int InStrive);
@@ -173,7 +179,11 @@ public:
 
 	void LowDownInCome();
 
-	void ConsumeMoney(int InMoney);
+	UFUNCTION(BlueprintCallable,category="Attributes | Function")
+	void PurchaseItems(EItemCategory ItemCategory,int InConsumeAccount);
+
+	UFUNCTION(BlueprintCallable,category="Attributes | Function")
+	bool CheckEnoughToken(EItemCategory ItemCategory,int InConsumeAccount);
 	
 
 	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
@@ -181,6 +191,7 @@ public:
 
 	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
 	int ConclusionKPI();
+	
 
 	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
 	void RestartStrive();
