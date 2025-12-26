@@ -13,8 +13,18 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnKPIDelegate, float, InKPI);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnMoneyDelegate,int,InMoney);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnFishDelegate,int,InFish);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnStriveDelegate,float,InStrive);
+
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnStriveMaxDelegate);
 
+UENUM(BlueprintType, Blueprintable)
+enum class ECharacterState : uint8
+{
+	Character_Fishing,
+	Character_Working,
+	Character_LowPress,
+	Character_HighPress,
+	Character_ExtremPress
+};
 
 
 UENUM(BlueprintType, Blueprintable) 
@@ -38,6 +48,7 @@ enum class EPlayerStatus : uint8
 };
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnStatusDelegate,EPlayerStatus,InStatus);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnCharacterStateDelegate,ECharacterState,InStates);
 /**
  * 
  */
@@ -64,6 +75,8 @@ public:
 	FOnStriveDelegate OnStriveChanged;
 	UPROPERTY(BlueprintAssignable, Category="KingofSlacker")
 	FOnStatusDelegate OnStatusChanged;
+	UPROPERTY(BlueprintAssignable, Category="KingofSlacker")
+	FOnCharacterStateDelegate OnCharacterStateChanged;
 	UPROPERTY(BlueprintAssignable, Category="KingofSlacker")
 	FOnStriveMaxDelegate OnStriveMaxAchieved;
 	

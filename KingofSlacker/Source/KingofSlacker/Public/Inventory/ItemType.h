@@ -36,7 +36,7 @@ struct FItemType : public FTableRowBase
 	int32 ItemQuantity = 0;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "ItemDefinition")
-	TSoftObjectPtr<UStaticMesh> ItemMesh = nullptr;
+	TObjectPtr<UStaticMesh> ItemMesh = nullptr;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "ItemDefinition")
 	TObjectPtr<UTexture2D> ItemTexture = nullptr;

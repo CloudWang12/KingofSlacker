@@ -6,6 +6,7 @@
 #include "UObject/Interface.h"
 #include "InteractInterface.generated.h"
 
+class AItemActor;
 // This class does not need to be modified.
 UINTERFACE(MinimalAPI)
 class UInteractInterface : public UInterface
@@ -24,4 +25,13 @@ public:
 
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
 	void Interact(bool bInRange);
+
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+	FText GetName();
+
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+	UTexture2D* GetTexture();
+
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+	AItemActor* GetItemActorRef();
 };
