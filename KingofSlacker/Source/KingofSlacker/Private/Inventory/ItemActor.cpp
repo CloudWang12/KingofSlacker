@@ -40,3 +40,8 @@ void AItemActor::Interact_Implementation(bool bInRange)
 	IInteractInterface::Interact_Implementation(bInRange);
 }
 
+void AItemActor::Delegate_InteractItem()
+{
+	OnInteractItem.Broadcast();
+}
+

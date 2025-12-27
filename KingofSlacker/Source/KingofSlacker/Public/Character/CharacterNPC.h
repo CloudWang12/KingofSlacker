@@ -10,13 +10,17 @@
 UENUM(BlueprintType, Blueprintable)
 enum class ENPCState : uint8
 {
+	None,
+	NPC_Idle,
 	NPC_Working,
 	NPC_Fishing,
-	NPC_HighPress,
-	NPC_LowPress,
-	NPC_Sad,
-	NPC_HighComfotable,
-	NPC_LowComfotable
+	NPC_Eating,
+	NPC_Talking
+	//NPC_Sad,
+	//NPC_HighPress,
+	//NPC_LowPress,
+	//NPC_HighComfotable,
+	//NPC_LowComfotable
 };
 
 /**

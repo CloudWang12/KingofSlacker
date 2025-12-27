@@ -13,13 +13,28 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnKPIDelegate, float, InKPI);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnMoneyDelegate,int,InMoney);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnFishDelegate,int,InFish);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnStriveDelegate,float,InStrive);
+
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnStriveMaxDelegate);
 
+UENUM(BlueprintType, Blueprintable)
+enum class ECharacterState : uint8
+{
+	Character_Fishing,
+	Character_Working,
+	Character_LowPress,
+	Character_HighPress,
+	Character_ExtremPress
+};
 
 
 UENUM(BlueprintType, Blueprintable) 
 enum class EPlayerStatus : uint8
 {
+	None,
+	Station_Idle,
+	Station_Working,
+	Station_Fishing,
+	Station_Throwing,
 	Player_Fishing,
 	Player_Working,
 	Player_Throwing,
@@ -29,14 +44,11 @@ enum class EPlayerStatus : uint8
 	Player_LowPress,
 	Player_Sad,
 	Player_HighComfotable,
-	Player_LowComfotable,
-	Station_Idle,
-	Station_Working,
-	Station_Fishing,
-	Station_Throwing
+	Player_LowComfotable
 };
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnStatusDelegate,EPlayerStatus,InStatus);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnCharacterStateDelegate,ECharacterState,InStates);
 /**
  * 
  */
@@ -63,6 +75,8 @@ public:
 	FOnStriveDelegate OnStriveChanged;
 	UPROPERTY(BlueprintAssignable, Category="KingofSlacker")
 	FOnStatusDelegate OnStatusChanged;
+	UPROPERTY(BlueprintAssignable, Category="KingofSlacker")
+	FOnCharacterStateDelegate OnCharacterStateChanged;
 	UPROPERTY(BlueprintAssignable, Category="KingofSlacker")
 	FOnStriveMaxDelegate OnStriveMaxAchieved;
 	
@@ -156,7 +170,14 @@ public:
 	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
 	void AddUpMaxStrive(float InCountAddup);
 
+	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
 	void AddUpMoney(int InMoney);
+
+	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
+	void LowDownMoney(int InMoney);
+
+	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
+	void LowDownFishEnergy(float InCountFishEnergy);
 	
 	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
 	void LowDownStrive(int InStrive);
@@ -171,7 +192,11 @@ public:
 
 	void LowDownInCome();
 
-	void ConsumeMoney(int InMoney);
+	UFUNCTION(BlueprintCallable,category="Attributes | Function")
+	void PurchaseItems(EItemCategory ItemCategory,int InConsumeAccount);
+
+	UFUNCTION(BlueprintCallable,category="Attributes | Function")
+	bool CheckEnoughToken(EItemCategory ItemCategory,int InConsumeAccount);
 	
 
 	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
@@ -179,6 +204,7 @@ public:
 
 	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
 	int ConclusionKPI();
+	
 
 	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
 	void RestartStrive();
