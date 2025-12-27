@@ -30,8 +30,16 @@ public:
 	FText GetName();
 
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+	FText GetItemName();
+
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
 	UTexture2D* GetTexture();
 
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
 	AItemActor* GetItemActorRef();
+
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+	int GetItemIncome();
+
+	
 };
