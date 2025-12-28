@@ -140,6 +140,11 @@ public:
 	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Attributes | Player")
 	float MaxHealth;
 
+	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Attributes | Player")
+	int InfectionCount = 0;
+
+	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Attributes | Player")
+	TArray<int> FinishedIndexArray;
 	
 
 
