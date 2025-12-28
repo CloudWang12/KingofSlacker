@@ -47,6 +47,9 @@ public:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
 	int year = 1;
 
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
+	float TimeDuration = 1.f;
+
 	UPROPERTY(BlueprintAssignable)
 	FOnDayDelegate OnDayChanged;
 

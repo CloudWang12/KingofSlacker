@@ -13,6 +13,7 @@ UTaskComponent::UTaskComponent()
 	day =1;
 	month =1;
 	year=1;
+	TimeDuration = 1.f;
 
 }
 
@@ -41,7 +42,7 @@ void UTaskComponent::StartTimer()
 		TimerHandle,
 		this,
 		&UTaskComponent::TimeManager,
-		1.f,
+		TimeDuration,
 		true
 		);
 }
