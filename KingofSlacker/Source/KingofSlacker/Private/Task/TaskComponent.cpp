@@ -10,6 +10,9 @@ UTaskComponent::UTaskComponent()
 {
 	
 	PrimaryComponentTick.bCanEverTick = true;
+	day =1;
+	month =1;
+	year=1;
 
 }
 

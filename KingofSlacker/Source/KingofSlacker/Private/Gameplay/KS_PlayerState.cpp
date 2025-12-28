@@ -30,6 +30,7 @@ AKS_PlayerState::AKS_PlayerState()
 
 	Health = 50.f;
 	MaxHealth = 100.f;
+	InfectionCount = 0;
 	
 }
 
@@ -56,9 +57,31 @@ void AKS_PlayerState::AddUpFishEnergyEfficiency(float InCountAddup)
 	Fish_EnergyEfficiency *= InCountAddup;
 }
 
-void AKS_PlayerState::ConsumeMoney(int InMoney)
+
+
+void AKS_PlayerState::PurchaseItems(EItemCategory ItemCategory, int InConsumeAccount)
 {
-	Money -= InMoney;
+	if (ItemCategory==EItemCategory::Consumable)
+	{
+		LowDownMoney(InConsumeAccount);
+	}
+	else if (ItemCategory==EItemCategory::Equipable)
+	{
+		LowDownFishEnergy(InConsumeAccount);
+	}
+}
+
+bool AKS_PlayerState::CheckEnoughToken(EItemCategory ItemCategory, int InConsumeAccount)
+{
+	if (ItemCategory==EItemCategory::Consumable && Money >= InConsumeAccount)
+	{
+		return true;
+	}
+	else if (ItemCategory==EItemCategory::Equipable && Fish_Energy >= InConsumeAccount)
+	{
+		return true;
+	}
+	return false;
 }
 
 void AKS_PlayerState::ConsumeFishEnergy(int InCountConsume)
@@ -92,10 +115,12 @@ int AKS_PlayerState::ConclusionKPI()
 		KPITimes++;
 	}
 	float KPIPercentage = KPI/MaxKPI;
-	AddUpMoney(Income*KPIPercentage);
+	//AddUpMoney(Income*KPIPercentage);
 	
 	KPI = 0;
-	return Income*KPIPercentage;
+	OnKPIChanged.Broadcast(KPI);
+	Income*= KPIPercentage;
+	return Income;
 }
 
 void AKS_PlayerState::RestartStrive()
@@ -105,12 +130,12 @@ void AKS_PlayerState::RestartStrive()
 
 void AKS_PlayerState::EffectFishEfficiency(float InStrive)
 {
-	EPlayerStatus PlayerStatus;
+	ECharacterState PlayerStates;
 	if (InStrive >= MaxStrive)
 	{
 		Fish_EnergyEfficiency = FMath::Clamp(.0f,0.f,1.f);
-		PlayerStatus = EPlayerStatus::Player_MaxStrive;
-		OnStatusChanged.Broadcast(PlayerStatus);
+		PlayerStates = ECharacterState::Character_ExtremPress;
+		OnCharacterStateChanged.Broadcast(PlayerStates);
 		OnStriveMaxAchieved.Broadcast();
 	}
 	else if (InStrive == MaxStrive*0.9f)
@@ -121,8 +146,8 @@ void AKS_PlayerState::EffectFishEfficiency(float InStrive)
 	{
 		Fish_EnergyEfficiency = FMath::Clamp(.2f*Fish_EnergyEfficiency,0.f,1.f);
 		UKismetSystemLibrary::PrintString(this,TEXT("Strive is reach to the 80%"),true,false,FLinearColor::White,10.f);
-		PlayerStatus = EPlayerStatus::Player_HighPress;
-		OnStatusChanged.Broadcast(PlayerStatus);
+		PlayerStates = ECharacterState::Character_HighPress;
+		OnCharacterStateChanged.Broadcast(PlayerStates);
 	}
 	else if (InStrive == MaxStrive*.7f)
 	{
@@ -132,8 +157,8 @@ void AKS_PlayerState::EffectFishEfficiency(float InStrive)
 	{
 		Fish_EnergyEfficiency = FMath::Clamp(.4f*Fish_EnergyEfficiency,0.f,1.f);
 		UKismetSystemLibrary::PrintString(this,TEXT("Strive is reach to the 60%"),true,false,FLinearColor::White,10.f);
-		PlayerStatus = EPlayerStatus::Player_Press;
-		OnStatusChanged.Broadcast(PlayerStatus);
+		PlayerStates = ECharacterState::Character_LowPress;
+		OnCharacterStateChanged.Broadcast(PlayerStates);
 	}
 	else if (InStrive == MaxStrive*.5f)
 	{
@@ -143,8 +168,8 @@ void AKS_PlayerState::EffectFishEfficiency(float InStrive)
 	{
 		Fish_EnergyEfficiency = FMath::Clamp(.6f*Fish_EnergyEfficiency,0.f,1.f);
 		UKismetSystemLibrary::PrintString(this,TEXT("Strive is reach to the 40%"),true,false,FLinearColor::White,10.f);
-		PlayerStatus = EPlayerStatus::Player_LowPress;
-		OnStatusChanged.Broadcast(PlayerStatus);
+		PlayerStates = ECharacterState::Character_Working;
+		OnCharacterStateChanged.Broadcast(PlayerStates);
 	}
 	else if (InStrive == MaxStrive*.3f)
 	{
@@ -153,9 +178,6 @@ void AKS_PlayerState::EffectFishEfficiency(float InStrive)
 	else if (InStrive == MaxStrive*.2f)
 	{
 		Fish_EnergyEfficiency = FMath::Clamp(.8f*Fish_EnergyEfficiency,0.f,1.f);
-		UKismetSystemLibrary::PrintString(this,TEXT("Strive is reach to the 20%"),true,false,FLinearColor::White,10.f);
-		PlayerStatus = EPlayerStatus::Player_Working;
-		OnStatusChanged.Broadcast(PlayerStatus);
 	}
 	else if (InStrive == MaxStrive*.1f)
 	{
@@ -164,8 +186,8 @@ void AKS_PlayerState::EffectFishEfficiency(float InStrive)
 	else if (InStrive == MaxStrive*.0f)
 	{
 		Fish_EnergyEfficiency = FMath::Clamp(1.f*Fish_EnergyEfficiency,0.f,1.f);
-		PlayerStatus = EPlayerStatus::Player_Fishing;
-		OnStatusChanged.Broadcast(PlayerStatus);
+		PlayerStates = ECharacterState::Character_Fishing;
+		OnCharacterStateChanged.Broadcast(PlayerStates);
 	}
 }
 
@@ -217,6 +239,19 @@ void AKS_PlayerState::AddUpMaxStrive(float InCountAddup)
 void AKS_PlayerState::AddUpMoney(int InMoney)
 {
 	Money += InMoney;
+	OnMoneyChanged.Broadcast(Money);
+}
+
+void AKS_PlayerState::LowDownMoney(int InMoney)
+{
+	Money -= InMoney;
+	OnMoneyChanged.Broadcast(Money);
+}
+
+void AKS_PlayerState::LowDownFishEnergy(float InCountFishEnergy)
+{
+	Fish_Energy-=InCountFishEnergy;
+	OnFishChanged.Broadcast(Fish_Energy);
 }
 
 void AKS_PlayerState::LowDownStrive(int InStrive)
