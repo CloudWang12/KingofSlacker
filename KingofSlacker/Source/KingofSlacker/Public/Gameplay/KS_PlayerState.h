@@ -150,6 +150,9 @@ public:
 	int BeArrestMoney;
 
 	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Attributes | Player")
+	float HospitalCost;
+
+	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Attributes | Player")
 	TArray<int> FinishedIndexArray;
 	
 
@@ -215,7 +218,9 @@ public:
 
 	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
 	int ConclusionKPI();
-	
+
+	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
+	void RestartKPI();
 
 	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
 	void RestartStrive();

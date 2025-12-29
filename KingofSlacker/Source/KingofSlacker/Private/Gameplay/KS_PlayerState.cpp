@@ -34,6 +34,7 @@ AKS_PlayerState::AKS_PlayerState()
 
 	MonthCost = 0;
 	BeArrestMoney = 0;
+	HospitalCost = 0;
 	
 }
 
@@ -120,15 +121,22 @@ int AKS_PlayerState::ConclusionKPI()
 	float KPIPercentage = KPI/MaxKPI;
 	//AddUpMoney(Income*KPIPercentage);
 	
-	KPI = 0;
-	OnKPIChanged.Broadcast(KPI);
+	//KPI = 0;
+	//OnKPIChanged.Broadcast(KPI);
 	Income*= KPIPercentage;
 	return Income;
+}
+
+void AKS_PlayerState::RestartKPI()
+{
+	KPI = 0;
+	OnKPIChanged.Broadcast(KPI);
 }
 
 void AKS_PlayerState::RestartStrive()
 {
 	Strive=0.f;
+	OnStriveChanged.Broadcast(Strive);
 }
 
 void AKS_PlayerState::EffectFishEfficiency(float InStrive)
