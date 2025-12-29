@@ -144,6 +144,12 @@ public:
 	int InfectionCount = 0;
 
 	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Attributes | Player")
+	int MonthCost;
+
+	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Attributes | Player")
+	int BeArrestMoney;
+
+	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Attributes | Player")
 	TArray<int> FinishedIndexArray;
 	
 

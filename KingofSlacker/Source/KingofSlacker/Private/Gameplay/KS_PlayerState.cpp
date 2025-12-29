@@ -31,6 +31,9 @@ AKS_PlayerState::AKS_PlayerState()
 	Health = 50.f;
 	MaxHealth = 100.f;
 	InfectionCount = 0;
+
+	MonthCost = 0;
+	BeArrestMoney = 0;
 	
 }
 
