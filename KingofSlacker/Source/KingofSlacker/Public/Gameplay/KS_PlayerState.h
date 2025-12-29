@@ -114,7 +114,7 @@ public:
 	int MaxFish_Energy;
 
 	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Attributes | Player")
-	float Fish_EnergyEfficiency;
+	float Fish_Energy_Additive;
 
 	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Attributes | Player")
 	float Fish_Time;
@@ -164,7 +164,7 @@ public:
 	void AddUpMaxFishEnergy(int InCountAddup);
 
 	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
-	void AddUpFishEnergyEfficiency(float InCountAddup);
+	void AddUpFishEnergyAdditive(bool bHaveItem);
 
 	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
 	void AddUpKPI();

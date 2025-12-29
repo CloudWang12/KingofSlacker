@@ -1,14 +1,13 @@
-
-
 #pragma once
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "Components/StaticMeshComponent.h"
+#include "Components/WidgetComponent.h"
 #include "StationBase.generated.h"
 
 class AKS_PlayerState;
 class UBarPercentageWidget;
-class UWidgetComponent;
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnBarProgressMax);
 
@@ -18,73 +17,79 @@ class KINGOFSLACKER_API AStationBase : public AActor
 	GENERATED_BODY()
 	
 public:	
-	
 	AStationBase();
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Components", meta = (AllowPrivateAccess = "true"))
-	UWidgetComponent*ProgressBar;
+protected:
+	virtual void BeginPlay() override;
 
-	UPROPERTY(EditAnywhere, Category="Station")
-	UBarPercentageWidget*ProgressBarWidget;
+public:
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
+	UStaticMeshComponent* Root;
 
-	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite, Category="Station")
-	mutable AKS_PlayerState * KS_PlayerState;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
+	UWidgetComponent* ProgressBar;
 
-	UPROPERTY(BlueprintAssignable, Category="Station")
+	UPROPERTY(BlueprintReadOnly, Category = "Station")
+	UBarPercentageWidget* ProgressBarWidget;
+
+	UPROPERTY(BlueprintReadOnly, Category = "Station")
+	AKS_PlayerState* KS_PlayerState;
+
+	UPROPERTY(BlueprintAssignable, Category = "Station")
 	FOnBarProgressMax OnBarProgressMax;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Station")
+	bool bLoopEnabled = true;
+
+	UPROPERTY(BlueprintReadOnly, Category = "Station")
+	int32 LoopCount = 0;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Station")
+	int32 MaxLoopCount = 0;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Station")
 	bool bHoldingSpace = false;
+	
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Station")
 	bool bInRange = false;
 
+	// 进度值
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Station")
 	float BarValue = 0.f;
+	
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Station")
 	float BarMaxValue = 1.f;
+	
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Station")
 	float BarIncreaseValue = 0.2f;
-	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite, Category = "Station")
+	
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Station")
 	float EffectTimes = 1.f;
 
 	FTimerHandle TimerHandle;
 
-	FTimerHandle ResetTimerHandle;
-
-	FTimerHandle DelayTimerHandle;
-
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Station")
 	float TimerInterval = 0.05f;
 
-protected:
-	
-	virtual void BeginPlay() override;
-
 public:
+	UFUNCTION(BlueprintCallable, Category = "Station")
+	AKS_PlayerState* GetKSPlayerState();
 
 	UFUNCTION(BlueprintCallable, Category = "Station")
-	AKS_PlayerState * GetKSPlayerState()const ;
+	void ResetProgress();
 
+	UFUNCTION(BlueprintCallable, Category = "Station")
 	void StartTimer();
+	
+	UFUNCTION(BlueprintCallable, Category = "Station")
 	void StopTimer();
 
-	void StartResetTimer();
-	void StopResetTimer();
-
-	void StartDealyTimer();
-	void StopDealyTimer();
-
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "Station")
 	void UpdateData();
 
-	void ResetData();
-
-	void DelayData();
-
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "Station")
 	void OnSpacePressed();
-	UFUNCTION(BlueprintCallable)
-	void OnSpaceReleased();
 	
-
+	UFUNCTION(BlueprintCallable, Category = "Station")
+	void OnSpaceReleased();
 };
