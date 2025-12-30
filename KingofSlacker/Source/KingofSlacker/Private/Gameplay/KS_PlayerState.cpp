@@ -145,8 +145,9 @@ int AKS_PlayerState::ConclusionKPI()
 	
 	//KPI = 0;
 	//OnKPIChanged.Broadcast(KPI);
-	Income*= KPIPercentage;
-	return Income;
+	int NewIncome = Income * KPIPercentage;
+
+	return NewIncome;
 }
 
 void AKS_PlayerState::RestartKPI()
