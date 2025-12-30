@@ -133,11 +133,11 @@ Content/Backup/
 
 # 保留源代码目录结构
 !Source/**/
-!Plugins/*/Source/**/
+!**/Plugins/*/Source/**/
 
 # 保留必要的内容文件
 !Content/**/
-!Plugins/*/Content/**/
+!**/Plugins/*/Content/**/
 
 # 保留文档文件
 !*.md
@@ -178,4 +178,5 @@ apdisk
 # Mercurial
 .hg/
 KingofSlacker/Plugins/Developer/RiderLink/Intermediate/Build/Win64/x64/UnrealEditor/Development
-KingofSlacker/Plugins
+
+KingofSlacker/Plugins/Developer
