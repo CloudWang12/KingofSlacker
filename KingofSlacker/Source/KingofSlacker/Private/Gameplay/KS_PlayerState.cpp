@@ -108,6 +108,10 @@ bool AKS_PlayerState::CheckEnoughToken(EItemCategory ItemCategory, int InConsume
 	{
 		return true;
 	}
+	else if (ItemCategory==EItemCategory::Projectile && Fish_Energy >= InConsumeAccount)
+	{
+		return true;
+	}
 	return false;
 }
 
