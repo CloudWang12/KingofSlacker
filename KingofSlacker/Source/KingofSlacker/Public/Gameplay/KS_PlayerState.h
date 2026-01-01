@@ -158,7 +158,7 @@ public:
 
 
 	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
-	void AddUpFishEnergy();
+	void AddUpFishEnergy(int AdditionalAccount);
 
 	UFUNCTION(BlueprintCallable,Category="Attributes | Function")
 	void AddUpMaxFishEnergy(int InCountAddup);

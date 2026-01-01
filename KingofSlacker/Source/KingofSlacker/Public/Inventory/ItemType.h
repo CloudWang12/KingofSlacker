@@ -10,6 +10,7 @@ enum class EItemCategory :uint8
 {
 	Consumable,
 	Equipable,
+	Projectile,
 	Misc
 };
 

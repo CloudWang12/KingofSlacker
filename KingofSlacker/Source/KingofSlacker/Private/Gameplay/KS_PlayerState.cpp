@@ -38,23 +38,24 @@ AKS_PlayerState::AKS_PlayerState()
 	
 }
 
-void AKS_PlayerState::AddUpFishEnergy()
+void AKS_PlayerState::AddUpFishEnergy(int AdditionalAccount)
 {
+	
 	if (Strive>=0&&Strive<=30)
 	{
-		Fish_Energy_Count = 5 + Fish_Energy_Additive;
+		Fish_Energy_Count = 5 + Fish_Energy_Additive + AdditionalAccount;
 		Fish_Energy+=Fish_Energy_Count;
 		Fish_Energy = FMath::Clamp(Fish_Energy,0,MaxFish_Energy);
 	}
 	else if (Strive>30&&Strive<=60)
 	{
-		Fish_Energy_Count = 3+ Fish_Energy_Additive;
+		Fish_Energy_Count = 3+ Fish_Energy_Additive + AdditionalAccount;
 		Fish_Energy+=Fish_Energy_Count;
 		Fish_Energy = FMath::Clamp(Fish_Energy,0,MaxFish_Energy);
 	}
 	else if (Strive>60&&Strive<=100)
 	{
-		Fish_Energy_Count = 1+ Fish_Energy_Additive;
+		Fish_Energy_Count = 1+ Fish_Energy_Additive + AdditionalAccount;
 		Fish_Energy+=Fish_Energy_Count;
 		Fish_Energy = FMath::Clamp(Fish_Energy,0,MaxFish_Energy);
 	}
